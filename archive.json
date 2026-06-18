@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-16T04:13:47.372714+00:00",
+  "timestamp": "2026-06-18T04:03:25.593305+00:00",
   "repo": "gloinul/draft-westerlund-tls-gcm-sst",
   "labels": [
     {
@@ -73,6 +73,22 @@
           "updatedAt": "2026-05-08T09:21:54Z"
         }
       ]
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOSVqNcc8AAAABFyOW5A",
+      "title": "Section 8 needs to be addressed.",
+      "url": "https://github.com/gloinul/draft-westerlund-tls-gcm-sst/issues/2",
+      "state": "OPEN",
+      "author": "gloinul",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "This spec is not setting these limits, only need to comply with them. ",
+      "createdAt": "2026-06-17T12:22:57Z",
+      "updatedAt": "2026-06-17T12:22:57Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": []
