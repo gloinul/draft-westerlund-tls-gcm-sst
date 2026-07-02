@@ -46,7 +46,7 @@ informative:
 
 --- abstract
 
-This document defines cipher suites based on AES-GCM-SST and Rijndael-GCM-SST (Galois Counter Mode with Secure Short Tags) for use in TLS 1.3, DTLS 1.3, and QUIC. GCM-SST provides authenticated encryption with near-ideal forgery probabilities for short authentication tags, making it suitable for bandwidth-constrained environments where reduced per-packet overhead is important. This document specifies cipher suites with 96-bit and 112-bit authentication tags.
+This document defines cipher suites based on AES-GCM-SST and Rijndael-GCM-SST (Galois Counter Mode with Strong Secure Tags) for use in TLS 1.3, DTLS 1.3, and QUIC. GCM-SST provides authenticated encryption with near-ideal forgery probabilities for short authentication tags, making it suitable for bandwidth-constrained environments where reduced per-packet overhead is important. This document specifies cipher suites with 96-bit and 112-bit authentication tags.
 
 --- middle
 
