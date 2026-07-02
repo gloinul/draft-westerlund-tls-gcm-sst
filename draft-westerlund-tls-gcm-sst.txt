@@ -5,11 +5,11 @@
 Transport Layer Security                                   M. Westerlund
 Internet-Draft                                         J. Preuß Mattsson
 Intended status: Standards Track                                Ericsson
-Expires: 19 November 2026                                    18 May 2026
+Expires: 3 January 2027                                      2 July 2026
 
 
-Use of Galois Counter Mode with Secure Short Tags (GCM-SST) in TLS, DTLS
-                                and QUIC
+  Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS,
+                             DTLS and QUIC
                   draft-westerlund-tls-gcm-sst-latest
 
 Abstract
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 November 2026.
+   This Internet-Draft will expire on 3 January 2027.
 
 Copyright Notice
 
@@ -371,9 +371,8 @@ Table of Contents
               Campagna, M., Maximov, A., and J. P. Mattsson, "Galois
               Counter Mode with Strong Secure Tags (GCM-SST)", Work in
               Progress, Internet-Draft, draft-mattsson-cfrg-aes-gcm-sst-
-              18, 19 February 2025,
-              <https://datatracker.ietf.org/doc/html/draft-mattsson-
-              cfrg-aes-gcm-sst-18>.
+              19, 2 July 2026, <https://datatracker.ietf.org/doc/html/
+              draft-mattsson-cfrg-aes-gcm-sst-19>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
