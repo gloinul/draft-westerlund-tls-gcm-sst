@@ -1,5 +1,5 @@
 ---
-title: "Use of Galois Counter Mode with Secure Short Tags (GCM-SST) in TLS, DTLS and QUIC"
+title: "Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS, DTLS and QUIC"
 abbrev: "GCM-SST in TLS, DTLS and QUIC"
 category: std
 
