@@ -1,8 +1,8 @@
 <!-- regenerate: on (set to off if you edit this file) -->
 
-# Use of Galois Counter Mode with Secure Short Tags (GCM-SST) in TLS, DTLS and QUIC
+# Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS, DTLS and QUIC
 
-This is the working area for the individual Internet-Draft, "Use of Galois Counter Mode with Secure Short Tags (GCM-SST) in TLS, DTLS and QUIC".
+This is the working area for the individual Internet-Draft, "Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS, DTLS and QUIC".
 
 * [Editor's Copy](https://gloinul.github.io/draft-westerlund-tls-gsm-sst/#go.draft-westerlund-tls-gsm-sst.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-westerlund-tls-gsm-sst)
