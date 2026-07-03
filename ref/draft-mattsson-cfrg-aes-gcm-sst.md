@@ -19,8 +19,8 @@ keyword:
 venue:
   group: "Crypto Forum"
   type: "Research Group"
-  mail: "cfrg@ietf.org"
-  arch: "https://mailarchive.ietf.org/arch/search/?email_list=cfrg"
+  mail: "cfrg@irtf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/cfrg"
   github: "emanjon/draft-mattsson-cfrg-aes-gcm-sst"
   latest: "https://emanjon.github.io/draft-mattsson-cfrg-aes-gcm-sst/draft-mattsson-cfrg-aes-gcm-sst.html"
 
@@ -63,9 +63,10 @@ normative:
 informative:
 
   RFC3711:
+  RFC4253:
   RFC4303:
   RFC6479:
-  RFC7539:
+  RFC8439:
   RFC8446:
   RFC8613:
   RFC9000:
@@ -74,45 +75,124 @@ informative:
   I-D.ietf-moq-transport:
   I-D.irtf-cfrg-aegis-aead:
 
-  UIA2:
-    target: https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2019/05/uea2uia2d1v21.pdf
-    title: "UEA2 and UIA2 Specification"
+  Accordions:
+    target: https://csrc.nist.gov/pubs/sp/800/197/a/iprd
+    title: "NIST Launches Development of Cryptographic Accordions"
     author:
       -
-        ins: ETSI SAGE
-    date: March 2009
+        ins: NIST
+    date: June 2025
 
-  EIA3:
-    target: https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2019/05/EEA3_EIA3_specification_v1_8.pdf
-    title: "128-EEA3 and 128-EIA3 Specification"
+  ACM:
+    target: https://certification.enisa.europa.eu/document/download/a845662b-aee0-484e-9191-890c4cfa7aaa_en
+    title: "Agreed Cryptographic Mechanisms"
+    date: April 2025
+
+  AES-WIDE:
+    target: https://csrc.nist.gov/pubs/sp/800/197/iprd
+    title: "NIST Proposes to Standardize a Wider Variant of AES"
     author:
       -
-        ins: ETSI SAGE
-    date: January 2019
+        ins: NIST
+    date: December 2024
+
+  AEZ:
+    target: https://eprint.iacr.org/2014/793.pdf
+    title: "Robust Authenticated-Encryption: AEZ and the Problem that it Solves"
+    author:
+      -
+        ins: Viet Tung Hoang
+      -
+        ins: Ted Krovetz
+      -
+        ins: Phillip Rogaway
+    date: March, 2017
+
+  ANSSI:
+    target: https://messervices.cyber.gouv.fr/documents-guides/NT_IPsec_EN.pdf
+    title: "Recommendations for securing networks with IPsec"
+    date: August 2015
+
+  Ascon:
+    target: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-232.ipd.pdf
+    title: "Ascon-Based Lightweight Cryptography Standards for Constrained Devices"
+    seriesinfo:
+      "NIST": "Special Publication 800-232 Initial Public Draft"
+    author:
+      -
+        ins: Meltem Sönmez Turan
+      -
+        ins: Kerry A. McKay
+      -
+        ins: Donghoon Chang
+      -
+        ins: Jinkeon Kang
+      -
+        ins: John Kelsey
+    date: November 2024
+
+  Bellare17:
+    target: https://eprint.iacr.org/2016/564.pdf
+    title: "The Multi-User Security of Authenticated Encryption: AES-GCM in TLS 1.3"
+    author:
+      -
+        ins: M. Bellare
+      -
+        ins: B. Tackmann
+    date: November 2017
+
+  Bellare19:
+    target: https://eprint.iacr.org/2019/624.pdf
+    title: "Nonces are Noticed: AEAD Revisited"
+    author:
+      -
+        ins: Mihir Bellare
+      -
+        ins: Ruth Ng
+      -
+        ins: Björn Tackmann
+    date: November 2019
+
+  Bernstein:
+    target: https://cr.yp.to/antiforgery/permutations-20050323.pdf
+    title: "Stronger Security Bounds for Permutations"
+    author:
+      -
+        ins: Daniel J. Bernstein
+    date: March 2005
 
   BSI:
     target: https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.html
     title: "Cryptographic Mechanisms Recommendations and Key Lengths"
     seriesinfo:
       "BSI": "Technical Guideline TR-02102-1"
-    date: March 2025
+    date: January 2026
 
-  ANSSI:
-    target: https://cyber.gouv.fr/sites/default/files/2021/03/anssi-guide-mecanismes_crypto-2.04.pdf
-    title: "Guide des mécanismes cryptographiques"
-    seriesinfo:
-      "ANSSI": "PG-083"
-    date: January 2020
-
-  Multiple:
-    target: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/comments/cwc-gcm/multi-forge-01.pdf
-    title: "Multiple Forgery Attacks Against Message Authentication Codes"
+  Campagna:
+    target: https://csrc.nist.gov/csrc/media/Events/2023/third-workshop-on-block-cipher-modes-of-operation/documents/accepted-papers/Galois%20Counter%20Mode%20with%20Secure%20Short%20Tags.pdf
+    title: "Galois Counter Mode with Strong Secure Tags (GCM-SST)"
     author:
       -
-        ins: David McGrew
+        ins: M. Campagna
       -
-        ins: Scott Fluhrer
-    date: May 2005
+        ins: A. Maximov
+      -
+        ins: J. Preuß Mattsson
+    date: October 2023
+
+  Degabriele:
+    target: https://doi.org/10.3929/ethz-b-000654260
+    title: "SoK: Efficient Design and Implementation of Polynomial Hash Functions over Prime Fields"
+    author:
+      -
+        ins: J. Degabriele
+      -
+        ins: J. Gilcher
+      -
+        ins: J. Govinden
+      -
+        ins: K. Paterson
+    date: May 2024
 
   Difference:
     target: https://link.springer.com/chapter/10.1007/978-3-319-78375-8_24
@@ -124,6 +204,68 @@ informative:
         ins: Ferdinand Sibleyras
     date: March 2018
 
+  Drucker:
+    target: https://rd.springer.com/chapter/10.1007/978-3-030-97652-1_18
+    title: "Software Optimization of Rijndael for Modern x86-64 Platforms"
+    author:
+      -
+        ins: Nir Drucker
+      -
+        ins: Shay Gueron
+    date: May 2022
+
+  EIA3:
+    target: https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2019/05/EEA3_EIA3_specification_v1_8.pdf
+    title: "128-EEA3 and 128-EIA3 Specification"
+    author:
+      -
+        ins: ETSI SAGE
+    date: January 2019
+
+  Entropy:
+    target: https://eprint.iacr.org/2024/1111.pdf
+    title: "Collision-Based Attacks on Block Cipher Modes - Exploiting Collisions and Their Absence"
+    author:
+      -
+        ins: J. Preuß Mattsson
+    date: February 2025
+
+  Ferguson:
+    target: https://csrc.nist.gov/CSRC/media/Projects/Block-Cipher-Techniques/documents/BCM/Comments/CWC-GCM/Ferguson2.pdf
+    title: "Authentication weaknesses in GCM"
+    author:
+      -
+        ins: N. Ferguson
+    date: May 2005
+
+  GCM:
+    target: https://doi.org/10.6028/NIST.SP.800-38D
+    title: "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC"
+    seriesinfo:
+      "NIST": "Special Publication 800-38D"
+    author:
+      -
+        ins: M. Dworkin
+    date: November 2007
+
+  GCM-Update:
+    target: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/comments/cwc-gcm/gcm-update.pdf
+    title: "GCM Update"
+    author:
+      -
+        ins: D. McGrew
+      -
+        ins: J. Viega
+    date: May 2005
+
+  Gueron:
+    target: https://csrc.nist.gov/csrc/media/Presentations/2023/constructions-based-on-the-aes-round/images-media/sess-5-gueron-bcm-workshop-2023.pdf
+    title: "Constructions based on the AES Round and Polynomial Multiplication that are Efficient on Modern Processor Architectures"
+    author:
+      -
+        ins: S. Gueron
+    date: October 2023
+
   Impossible:
     target: https://eprint.iacr.org/2012/623.pdf
     title: "Impossible plaintext cryptanalysis and probable-plaintext collision attacks of 64-bit block cipher modes"
@@ -131,20 +273,6 @@ informative:
       -
         ins: David McGrew
     date: November 2012
-
-  Reforge:
-    target: https://eprint.iacr.org/2017/332.pdf
-    title: "Reforgeability of Authenticated Encryption Schemes"
-    author:
-      -
-        ins: Christian Forler
-      -
-        ins: Eik List
-      -
-        ins: Stefan Lucks
-      -
-        ins: akob Wenzel
-    date: April 2017
 
   Inoue:
     target: https://eprint.iacr.org/2024/1928.pdf
@@ -172,123 +300,13 @@ informative:
         ins: Kazuhiko Minematsu
     date: August 2012
 
-  Bernstein:
-    target: https://cr.yp.to/antiforgery/permutations-20050323.pdf
-    title: "Stronger Security Bounds for Permutations"
+  Joux:
+    target: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/comments/800-38-series-drafts/gcm/joux_comments.pdf
+    title: "Authentication Failures in NIST version of GCM"
     author:
       -
-        ins: Daniel J. Bernstein
-    date: March 2005
-
-  Ducker:
-    target: https://rd.springer.com/chapter/10.1007/978-3-030-97652-1_18
-    title: "Software Optimization of Rijndael for Modern x86-64 Platforms"
-    author:
-      -
-        ins: Nir Drucker
-      -
-        ins: Shay Gueron
-    date: May 2022
-
-  Bellare:
-    target: https://eprint.iacr.org/2019/624.pdf
-    title: "Nonces are Noticed: AEAD Revisited"
-    author:
-      -
-        ins: Mihir Bellare
-      -
-        ins: Ruth Ng
-      -
-        ins: Björn Tackmann
-    date: November 2019
-
-  Procter:
-    target: https://eprint.iacr.org/2014/613.pdf
-    title: "A Security Analysis of the Composition of ChaCha20 and Poly1305"
-    author:
-      -
-        ins: Gordon Procter
-    date: August 2014
-
-  SAGE23:
-    target: https://www.3gpp.org/ftp/TSG_SA/WG3_Security/TSGS3_110_Athens/docs/S3-230642.zip
-    title: "Specification of the 256-bit air interface algorithms"
-    author:
-      -
-        ins: ETSI SAGE
-    date: February 2023
-
-  SAGE24:
-    target: https://www.3gpp.org/ftp/tsg_sa/WG3_Security/TSGS3_117_Maastricht/docs/S3-243394.zip
-    title: "Version 2.0 of 256-bit Confidentiality and Integrity Algorithms for the Air Interface"
-    author:
-      -
-        ins: ETSI SAGE
-    date: August 2024
-
-  WID23:
-    target: https://www.3gpp.org/ftp/tsg_sa/WG3_Security/TSGS3_113_Chicago/Docs/S3-235072.zip
-    title: "New WID on Milenage-256 algorithm"
-    author:
-      -
-        ins: 3GPP
-    date: November 2023
-
-  WID24:
-    target: https://www.3gpp.org/ftp/tsg_sa/TSG_SA/TSGS_103_Maastricht_2024-03/Docs/SP-240476.zip
-    title: "New WID on Addition of 256-bit security Algorithms"
-    author:
-      -
-        ins: 3GPP
-    date: March 2024
-
-  ZUC:
-    target: https://eprint.iacr.org/2021/1439
-    title: "An Addendum to the ZUC-256 Stream Cipher"
-    author:
-      -
-        ins: ZUC Design Team
-    date: September 2024
-
-  Plans:
-    target: https://csrc.nist.gov/pubs/sp/800/197/iprd
-    title: "NIST Proposes to Standardize a Wider Variant of AES"
-    author:
-      -
-        ins: NIST
-    date: December 2024
-
-  Comments38B:
-    target: https://csrc.nist.gov/csrc/media/Projects/crypto-publication-review-project/documents/initial-comments/sp800-38b-initial-public-comments-2024.pdf
-    title: "Public Comments on SP 800-38B"
-    author:
-      -
-        ins: NIST
-    date: September 2024
-
-  Sec5G:
-    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3169
-    title: "Security architecture and procedures for 5G System"
-    author:
-      -
-        ins: 3GPP TS 33.501
-    date: March 2025
-
-  PDCP:
-    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3196
-    title: "NR; Packet Data Convergence Protocol (PDCP) specification"
-    author:
-      -
-        ins: 3GPP TS 38.323
-    date: December 2024
-
-  Entropy:
-    target: https://eprint.iacr.org/2024/1111.pdf
-    title: "Collision-Based Attacks on Block Cipher Modes - Exploiting Collisions and Their Absence"
-    author:
-      -
-        ins: J. Preuß Mattsson
-    date: February 2025
+        ins: A. Joux
+    date: April 2006
 
   Lindell:
     target: https://mailarchive.ietf.org/arch/browse/cfrg/?gbt=1&index=cWpv0QgX2ltkWhtd3R9pEW7E1CA
@@ -298,19 +316,197 @@ informative:
         ins: Y. Lindell
     date: May 2024
 
-  Degabriele:
-    target: https://doi.org/10.3929/ethz-b-000654260
-    title: "SoK: Efficient Design and Implementation of Polynomial Hash Functions over Prime Fields"
+  Mattsson:
+    target: https://eprint.iacr.org/2015/477.pdf
+    title: "Authentication Key Recovery on Galois/Counter Mode (GCM)"
     author:
       -
-        ins: J. Degabriele
+        ins: J. Mattsson
       -
-        ins: J. Gilcher
+        ins: M. Westerlund
+    date: May 2015
+
+  Maximov:
+    target: https://eprint.iacr.org/2017/889.pdf
+    title: "On Fast Multiplication in Binary Finite Fields and Optimal Primitive Polynomials over GF(2)"
+    author:
       -
-        ins: J. Govinden
+        ins: A. Maximov
       -
-        ins: K. Paterson
-    date: May 2024
+        ins: H. Sjöberg
+    date: September 2017
+
+  Milenage-256:
+    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4244
+    title: "Specification of the MILENAGE-256 algorithm set"
+    author:
+      -
+        ins: 3GPP
+    date: January 2025
+
+  Multiple:
+    target: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/comments/cwc-gcm/multi-forge-01.pdf
+    title: "Multiple Forgery Attacks Against Message Authentication Codes"
+    author:
+      -
+        ins: David McGrew
+      -
+        ins: Scott Fluhrer
+    date: May 2005
+
+  Naito:
+    target: https://doi.org/10.1007/978-3-032-08124-7_3
+    title: "The Multi-user Security of GCM-SST and Further Enhancements"
+    author:
+      -
+        ins: Yusuke Naito
+      -
+        ins: Yu Sasaki
+      -
+        ins: Takeshi Sugawara
+    date: October 2025
+
+  Niwa:
+    target: https://eprint.iacr.org/2015/214.pdf
+    title: "GCM Security Bounds Reconsidered"
+    author:
+      -
+        ins: Yuichi Niwa
+      -
+        ins: Keisuke Ohashi
+      -
+        ins: Kazuhiko Minematsu
+      -
+        ins: Tetsu Iwata
+    date: March 2015
+
+  NCA4:
+    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4220
+    title: "Specification of the Snow 5G based 256-bits algorithm set"
+    author:
+      -
+        ins: 3GPP
+    date: March 2026
+
+  NCA5:
+    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4221
+    title: "Specification of the AES based 256-bits algorithm set"
+    author:
+      -
+        ins: 3GPP
+    date: March 2026
+
+  NCA6:
+    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=4224
+    title: "Specification of the ZUC based 256-bits algorithm set"
+    author:
+      -
+        ins: 3GPP
+    date: March 2026
+
+  NMR:
+    target: https://eprint.iacr.org/2006/221.pdf
+    title: "Deterministic Authenticated-Encryption: A Provable-Security Treatment of the Key-Wrap Problem"
+    author:
+      -
+        ins: P. Rogaway
+      -
+        ins: T. Shrimpton
+    date: August 2007
+
+  NMRL:
+    target: https://doi.org/10.1007/978-3-319-63697-9_1
+    title: "Boosting Authenticated Encryption Robustness with Minimal Modifications"
+    author:
+      -
+        ins: T. Ashur
+      -
+        ins: O. Dunkelman
+      -
+        ins: A. Luykx
+    date: August 2007
+
+  Nyberg:
+    target: https://csrc.nist.gov/CSRC/media/Projects/Block-Cipher-Techniques/documents/BCM/Comments/general-comments/papers/Nyberg_Gilbert_and_Robshaw.pdf
+    title: "Galois MAC with forgery probability close to ideal"
+    author:
+      -
+        ins: K. Nyberg
+      -
+        ins: H. Gilbert
+      -
+        ins: M. Robshaw
+    date: June 2005
+
+  PDCP:
+    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3196
+    title: "NR; Packet Data Convergence Protocol (PDCP) specification"
+    author:
+      -
+        ins: 3GPP TS 38.323
+    date: January 2026
+
+  Procter:
+    target: https://eprint.iacr.org/2014/613.pdf
+    title: "A Security Analysis of the Composition of ChaCha20 and Poly1305"
+    author:
+      -
+        ins: Gordon Procter
+    date: August 2014
+
+  Reforge:
+    target: https://eprint.iacr.org/2017/332.pdf
+    title: "Reforgeability of Authenticated Encryption Schemes"
+    author:
+      -
+        ins: Christian Forler
+      -
+        ins: Eik List
+      -
+        ins: Stefan Lucks
+      -
+        ins: Jakob Wenzel
+    date: April 2017
+
+  Revise:
+    target: https://csrc.nist.gov/news/2023/proposal-to-revise-sp-800-38d
+    title: "Announcement of Proposal to Revise SP 800-38D"
+    author:
+      -
+        ins: NIST
+    date: August 2023
+
+  Robust:
+    target: https://link.springer.com/article/10.1007/s00145-023-09489-9
+    title: "Robust Channels: Handling Unreliable Networks in the Record Layers of QUIC and DTLS 1.3"
+    author:
+      -
+        ins: M. Fischlin
+      -
+        ins: F. Günther
+      -
+        ins: C. Janson
+    date: January 2024
+
+  Robust:
+    target: https://link.springer.com/article/10.1007/s00145-023-09489-9
+    title: "Robust Channels: Handling Unreliable Networks in the Record Layers of QUIC and DTLS 1.3"
+    author:
+      -
+        ins: M. Fischlin
+      -
+        ins: F. Günther
+      -
+        ins: C. Janson
+    date: January 2024
+
+  Sec5G:
+    target: https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3169
+    title: "Security architecture and procedures for 5G System"
+    author:
+      -
+        ins: 3GPP TS 33.501
+    date: March 2026
 
   SMAC:
     target: https://eprint.iacr.org/2024/819
@@ -326,39 +522,7 @@ informative:
         ins: T. Johansson
     date: June 2024
 
-  AEZ:
-    target: https://eprint.iacr.org/2014/793.pdf
-    title: "Robust Authenticated-Encryption: AEZ and the Problem that it Solves"
-    author:
-      -
-        ins: Viet Tung Hoang
-      -
-        ins: Ted Krovetz
-      -
-        ins: Phillip Rogaway
-    date: March, 2017
-
-  Robust:
-    target: https://link.springer.com/article/10.1007/s00145-023-09489-9
-    title: "Robust Channels: Handling Unreliable Networks in the Record Layers of QUIC and DTLS 1.3"
-    author:
-      -
-        ins: M. Fischlin
-      -
-        ins: F. Günther
-      -
-        ins: C. Janson
-    date: January 2024
-
-  Revise:
-    target: https://csrc.nist.gov/news/2023/proposal-to-revise-sp-800-38d
-    title: "Announcement of Proposal to Revise SP 800-38D"
-    author:
-      -
-        ins: NIST
-    date: August 2023
-
-  SNOW:
+  SNOW-Vi:
     target: https://eprint.iacr.org/2021/236
     title: "SNOW-Vi: an extreme performance variant of SNOW-V for lower grade CPUs"
     author:
@@ -372,151 +536,53 @@ informative:
         ins: J. Yang
     date: March 2021
 
-  SST1:
-    target: https://csrc.nist.gov/csrc/media/Events/2023/third-workshop-on-block-cipher-modes-of-operation/documents/accepted-papers/Galois%20Counter%20Mode%20with%20Secure%20Short%20Tags.pdf
-    title: "Galois Counter Mode with Strong Secure Tags (GCM-SST)"
+  SNOW-Axn:
+    target: https://cic.iacr.org/p/3/1/31/pdf
+    title: "Pushing to the limits: SNOW-Axn – a fast AEAD stream cipher in aggregated mode"
     author:
       -
-        ins: M. Campagna
+        ins: D. Wang
       -
         ins: A. Maximov
       -
-        ins: J. Preuß Mattsson
-    date: October 2023
+        ins: P. Ekdahl
+      -
+        ins: T. Johansson
+    date: May 2026
 
-  SST2:
-    target: https://csrc.nist.gov/csrc/media/Presentations/2023/galois-counter-mode-with-secure-short-tags/images-media/sess-5-mattsson-bcm-workshop-2023.pdf
-    title: "Galois Counter Mode with Strong Secure Tags (GCM-SST)"
+  UIA2:
+    target: https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2019/05/uea2uia2d1v21.pdf
+    title: "UEA2 and UIA2 Specification"
     author:
       -
-        ins: M. Campagna
-      -
-        ins: A. Maximov
-      -
-        ins: J. Preuß Mattsson
-    date: October 2023
-
-  GCM:
-    target: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf
-    title: "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC"
-    seriesinfo:
-      "NIST": "Special Publication 800-38D"
-    author:
-      -
-        ins: M. Dworkin
-    date: November 2007
-
-  Ascon:
-    target: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-232.ipd.pdf
-    title: "Ascon-Based Lightweight Cryptography Standards for Constrained Devices"
-    seriesinfo:
-      "NIST": "Special Publication 800-232 Initial Public Draft"
-    author:
-      -
-        ins: Meltem Sönmez Turan
-      -
-        ins: Kerry A. McKay
-      -
-        ins: Donghoon Chang
-      -
-        ins: Jinkeon Kang
-      -
-        ins: John Kelsey
-    date: November 2024
-
-  GCM-Update:
-    target: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/comments/cwc-gcm/gcm-update.pdf
-    title: "GCM Update"
-    author:
-      -
-        ins: D. McGrew
-      -
-        ins: J. Viega
-    date: May 2005
-
-  Gueron:
-    target: https://csrc.nist.gov/csrc/media/Presentations/2023/constructions-based-on-the-aes-round/images-media/sess-5-gueron-bcm-workshop-2023.pdf
-    title: "Constructions based on the AES Round and Polynomial Multiplication that are Efficient on Modern Processor Architectures"
-    author:
-      -
-        ins: S. Gueron
-    date: October 2023
-
-  Ferguson:
-    target: https://csrc.nist.gov/CSRC/media/Projects/Block-Cipher-Techniques/documents/BCM/Comments/CWC-GCM/Ferguson2.pdf
-    title: "Authentication weaknesses in GCM"
-    author:
-      -
-        ins: N. Ferguson
-    date: May 2005
-
-  Joux:
-    target: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/comments/800-38-series-drafts/gcm/joux_comments.pdf
-    title: "Authentication Failures in NIST version of GCM"
-    author:
-      -
-        ins: A. Joux
-    date: April 2006
-
-  Nyberg:
-    target: https://csrc.nist.gov/CSRC/media/Projects/Block-Cipher-Techniques/documents/BCM/Comments/general-comments/papers/Nyberg_Gilbert_and_Robshaw.pdf
-    title: "Galois MAC with forgery probability close to ideal"
-    author:
-      -
-        ins: K. Nyberg
-      -
-        ins: H. Gilbert
-      -
-        ins: M. Robshaw
-    date: June 2005
-
-  Mattsson:
-    target: https://eprint.iacr.org/2015/477.pdf
-    title: "Authentication Key Recovery on Galois/Counter Mode (GCM)"
-    author:
-      -
-        ins: J. Mattsson
-      -
-        ins: M. Westerlund
-    date: May 2015
-
-  Rogaway:
-    target: https://www.cryptrec.go.jp/exreport/cryptrec-ex-2012-2010r1.pdf
-    title: "Evaluation of Some Blockcipher Modes of Operation"
-    author:
-      -
-        ins: P. Rogaway
-    date: February 2011
-
-  Bellare:
-    target: https://eprint.iacr.org/2016/564.pdf
-    title: "The Multi-User Security of Authenticated Encryption: AES-GCM in TLS 1.3"
-    author:
-      -
-        ins: M. Bellare
-      -
-        ins: B. Tackmann
-    date: November 2017
+        ins: ETSI SAGE
+    date: March 2009
 
 --- abstract
 
-This  document defines the Galois Counter Mode with Strong Secure Tags (GCM-SST) Authenticated Encryption with Associated Data (AEAD) algorithm. GCM-SST can be used with any keystream generator, not just 128-bit block ciphers. The main differences from GCM are the use of an additional subkey H<sub>2</sub>, the derivation of fresh subkeys H and H<sub>2</sub> for each nonce, and the replacement of the GHASH function with the POLYVAL function from AES-GCM-SIV. This enables truncated tags with near-ideal forgery probabilities, even against multiple forgery attacks, which are significant security improvements over GCM. GCM-SST is designed for security protocols with replay protection and addresses the strong industry demand for fast encryption with minimal overhead and high security. This document registers several instances of GCM-SST using Advanced Encryption Standard (AES) and Rijndael-256.
+This document defines Galois Counter Mode with Strong Secure Tags (GCM-SST), an Authenticated Encryption with Associated Data (AEAD) algorithm that addresses several weaknesses of GCM. GCM-SST can be used with any keystream generator, not only 128-bit block ciphers. Main differences from GCM are the introduction of a second authentication subkey H<sub>2</sub>, per-nonce derivation of both H and H<sub>2</sub>, and stricter usage limits. Together, these changes yield authentication tags with near-ideal forgery probabilities, including reforgeability resistance. All registered instances have an expected number of forgeries E(F) ≈ v / 2<sup>t</sup>, a property that GCM is far from providing. GCM-SST is designed for security protocols with replay protection such as TLS, QUIC, SRTP, and PDCP, and provides hardware and software performance comparable to GCM. This document registers nine AEAD algorithm instances using AES and Rijndael-256 in counter mode, with tag lengths of 48, 96, and 112 bits. GCM-SST has been standardized by 3GPP for use with SNOW 5G, AES-256, and ZUC-256.
 
 --- middle
 
 # Introduction
 
-Advanced Encryption Standard (AES) in Galois Counter Mode (AES-GCM) {{GCM}} is a widely used AEAD algorithm {{RFC5116}} due to its attractive performance in both software and hardware as well as its provable security. During the NIST standardization, Ferguson pointed out two weaknesses in the GCM authentication function {{Ferguson}}. The first weakness significantly increases the probability of successful forgery for long messages. The second weakness reveals the subkey H if an attacker succeeds in creating forgeries. Once H is known, the attacker can consistently forge subsequent messages, drastically increasing the probability of multiple successful forgeries. The two weaknesses are problematic for all tag lengths but are especially critical when short tags are used.
+## Background and Motivation
 
-In a comment to NIST, Nyberg et al. {{Nyberg}} explained how small changes based on proven theoretical constructions mitigate these weaknesses. Unfortunately, NIST did not follow the advice from Nyberg et al. and instead specified additional requirements for use with short tags in Appendix C of {{GCM}}. NIST did not give any motivations for the parameter choices or the assumed security levels. Mattsson et al. {{Mattsson}} later demonstrated that attackers can almost always obtain feedback on the success or failure of forgery attempts, contradicting the assumptions NIST made for short tags. Furthermore, NIST appears to have relied on non-optimal attacks when calculating the parameters. Rogaway {{Rogaway}} criticizes the use of GCM with short tags and recommends prohibiting tags shorter than 96 bits. Reflecting the critique, NIST is planning to remove support for GCM with tags shorter than 96 bits {{Revise}}. NIST has not addressed the weaknesses for longer tags, such as the absence of reforgeability resistance {{Reforge}}. When AES-GCM is used in QUIC {{RFC9001}}, the expected number of forgeries can be equivalent to that of an ideal MAC with a length of 64.4 bits. Reforgeability resistance is a key design criterion in modern AEAD algorithms such as {{AEZ}}.
+AES in Galois Counter Mode (AES-GCM) {{GCM}} is a widely deployed Authenticated Encryption with Associated Data (AEAD) algorithm {{RFC5116}}, valued for its performance in hardware and software, and its provable security. During NIST standardization, Ferguson identified two weaknesses in GCM's authentication function {{Ferguson}}. The first significantly increases the forgery probability. The second allows recovery of the authentication subkey H upon a successful forgery, enabling arbitrary subsequent forgeries, a property known as reforgeability failure. Both weaknesses affect all tag lengths, but are especially damaging with short tags.
 
-Short tags are widely used, 32-bit tags are standard in most radio link layers including 5G {{Sec5G}}, 64-bit tags are very common in transport and application layers of the Internet of Things, and 32-, 64-, and 80-bit tags are common in media-encryption applications. Audio packets are small, numerous, and ephemeral. As such, they are highly sensitive to cryptographic overhead, but as each packet typically encodes only 20 ms of audio, forgery of individual packets is not a big concern and barely noticeable. Due to its weaknesses, GCM is typically not used with short tags. The result is either decreased performance from larger than needed tags {{I-D.ietf-moq-transport}}, or decreased performance from using much slower constructions such as AES-CTR combined with HMAC {{RFC3711}}{{RFC9605}}. Short tags are also useful to protect packets whose payloads are secured at higher layers, protocols where the security is given by the sum of the tag lengths, and in constrained radio networks, where the low bandwidth limits the number of forgery attempts. For all applications of short tags it is essential that the MAC behaves like an ideal MAC, i.e., the forgery probability is ≈ 1 / 2<sup>tag_length</sup> even after many generated MACs, many forgery attempts, and after a successful forgery. While Counter with CBC-MAC (CCM) {{RFC5116}} with short tags has forgery probabilities close to ideal, its performance is lower than that of GCM. For a comprehensive discussion on the use cases and requirements of short tags, see {{Comments38B}}.
+Nyberg et al. {{Nyberg}} showed that small, theoretically grounded changes would mitigate these weaknesses, but NIST instead imposed ad hoc restrictions for short tags. Mattsson et al. {{Mattsson}} later showed that attackers can nearly always observe whether a forgery succeeded, contradicting NIST's assumptions. NIST is now planning to remove support for tags shorter than 96 bits {{Revise}}, but has not addressed the underlying authentication weaknesses. A third weakness is that GCM does not impose sufficiently strict limits on the number of invocations and the lengths of plaintext and associated data. Even with 96-bit tags, AES-GCM {{GCM}} offers only a forgery probability of 2<sup>-39</sup>, and with 128-bit tags in QUIC {{RFC9001}}, the expected number of forgeries, E(F), is worse than that of an ideal 65-bit MAC. Reforgeability resistance is a core design criterion in modern AEAD schemes {{Reforge}}{{AEZ}}.
 
-This document defines the Galois Counter Mode with Strong Secure Tags (GCM-SST) Authenticated Encryption with Associated Data (AEAD) algorithm following the recommendations from Nyberg et al. {{Nyberg}}. GCM-SST is defined with a general interface, allowing it to be used with any keystream generator, not just 128-bit block ciphers. The main differences from GCM {{GCM}} are the introduction of an additional subkey H<sub>2</sub>, the derivation of fresh subkeys H and H<sub>2</sub> for each nonce, and the replacement of the GHASH function with the POLYVAL function from AES-GCM-SIV {{RFC8452}}, see {{GCM-SST}}. These changes enable truncated tags with near-ideal forgery probabilities, even against multiple forgery attacks, see {{Security}}. GCM-SST is designed for use in security protocols with replay protection such as TLS {{RFC8446}}, QUIC {{RFC9000}}, SRTP {{RFC3711}}, PDCP {{PDCP}}, etc. Security protocols with replay protection are by far the most important use case for GCM. In unicast scenarios, its authentication tag behaves like an ideal MAC, including reforgeability resistance. Users and implementers of cryptography expect algorithms to behave like ideal MACs. Compared to Poly1305 {{RFC7539}} and GCM {{RFC5116}}, GCM-SST can provide better integrity with less overhead. Its performance in hardware and software is similar to GCM {{GCM}}. In software, the two additional AES invocations are compensated by the use of POLYVAL, the ”little-endian version” of GHASH, which is faster on little-endian architectures. GCM-SST retains the additive encryption characteristic of GCM, which enables efficient implementations on modern processor architectures, see {{Gueron}} and Section 2.4 of {{GCM-Update}}.
+Short tags are widely used: 32-bit tags are standard in most radio link layers including 5G {{Sec5G}}, 64-bit tags are very common in IoT transport and application layers, and 32-, 64-, and 80-bit tags appear frequently in media encryption. Audio packets are small, numerous, and ephemeral, making them highly sensitive to cryptographic overhead; since each packet typically encodes only 20 ms of audio, forgery of individual packets is and barely noticeable. Due to its weaknesses, GCM is typically not used with short tags, forcing a choice between the overhead of unnecessarily long tags {{I-D.ietf-moq-transport}} and much slower constructions such as AES-CTR with HMAC {{RFC3711}}{{RFC9605}}. Short tags are also useful in packets whose payloads are secured at higher layers, in protocols where security is given by the sum of tag lengths, and in constrained radio networks where low bandwidth limits forgery attempts. For all these applications, it is essential that the MAC behaves ideally: the forgery probability should be ≈ 1 / 2<sup>t</sup>, where t is the tag length in bits, even after many encryptions, many forgery attempts, and a successful forgery. CCM {{RFC5116}} achieves near-ideal probabilities with short tags but at a performance penalty relative to GCM.
 
-This document also registers several GCM-SST instances using Advanced Encryption Standard (AES) {{AES}} and Rijndael with 256-bit keys and blocks (Rijndael-256) {{Rijndael}} in counter mode as keystream generators and with tag lengths of 48, 96, and 112 bits, see {{AES-GCM-SST}}. The authentication tags in all registered GCM-SST instances behave like ideal MACs, which is not the case at all for GCM {{GCM}}. 3GPP has standardized the use of Rijndael-256 for authentication and key generation in 3GPP TS 35.234–35.237 {{WID23}}. NIST plans to standardize Rijndael-256 {{Plans}}, although there might be revisions to the key schedule. Rijndael-256 has very good performance on modern x86-64 platforms equipped with AES-NI and VAES instructions {{Ducker}}. Compared to AEGIS {{I-D.irtf-cfrg-aegis-aead}}, AES-GCM-SST offers significantly higher performance in pure hardware implementations while retaining the advantage of being a mode of operation for AES.
+## Galois Counter Mode with Strong Secure Tags (GCM-SST)
 
-The integrity part of GCM-SST was originally developed by ETSI SAGE, under the name Mac5G, following a request from 3GPP, with several years of discussion and refinement contributing to its design {{SAGE23}}{{SAGE24}}.  Mac5G is constructed similarly to the integrity algorithms used for SNOW 3G {{UIA2}} and ZUC {{EIA3}}. 3GPP has decided to standardize GCM-SST for use with SNOW 5G {{SNOW}}, AES-256 {{AES}}, and ZUC-256 {{ZUC}} in 3GPP TS 35.240–35.248 {{WID24}}.
+This document defines GCM with Strong Secure Tags (GCM-SST), an AEAD algorithm that addresses these weaknesses. GCM-SST can be used with any keystream generator, not only 128-bit block ciphers. The differences from GCM {{GCM}} are: the introduction of a second authentication subkey H<sub>2</sub>, per-nonce derivation of H and H<sub>2</sub>, stricter usage limits, fixed-length deterministic nonces, and the replacement of GHASH with POLYVAL {{RFC8452}}. Together, these changes yield truncated tags with near-ideal forgery probabilities, even against multiple forgery attacks, and provide nonce-misuse resilience. GCM-SST is designed for use in security protocols with replay protection such as TLS {{RFC8446}}, QUIC {{RFC9000}}, SRTP {{RFC3711}}, and PDCP {{PDCP}}. In unicast settings with replay protection, GCM-SST's authentication tag behaves as an ideal MAC with full reforgeability resistance. Compared to Poly1305 {{RFC8439}} and GCM {{RFC5116}}, GCM-SST achieves stronger integrity with less overhead. Its hardware and software performance is comparable to GCM; in software, the two additional AES invocations are offset by POLYVAL's advantage over GHASH on little-endian architectures. GCM-SST preserves GCM's additive encryption structure, enabling efficient implementations on modern processors {{GCM-Update}}{{Gueron}}.
+
+This document also registers GCM-SST instances using AES {{AES}} and Rijndael with 256-bit keys and blocks (Rijndael-256) {{Rijndael}} in counter mode, with tag lengths of 48, 96, and 112 bits. These instances address the strong industry demand for fast authenticated encryption with minimal overhead and strong security. All registered instances achieve an expected number of forgeries E(F) ≈ v / 2<sup>t</sup>, where v is the number of forgery attempts, matching the behavior of an ideal MAC. This is a property expected of a modern AEAD but one that GCM does not provide. Rijndael-256 is already standardized by 3GPP for authentication and key generation {{Milenage-256}} and is planned for NIST standardization {{AES-WIDE}}. On modern x86 platforms with AES-NI and VAES instructions, Rijndael-256 performs efficiently {{Drucker}}. Compared to AEGIS {{I-D.irtf-cfrg-aegis-aead}}, AES-GCM-SST offers substantially higher throughput in dedicated hardware while retaining the advantage of being a mode of operation for AES.
+
+GCM-SST was originally developed by ETSI SAGE and subsequently standardized by 3GPP for use with SNOW 5G {{NCA4}}, AES-256 {{NCA5}}, and ZUC-256 {{NCA6}} in 3GPP TS 35.240–35.248. Security proofs for GCM-SST in single- and multi-key settings are provided by Inoue et al. {{Inoue}} and Naito et al. {{Naito}}.
+
+{{GCM-SST}} specifies GCM-SST, {{AES-GCM-SST}} registers AEAD algorithms using AES and Rijndael-256, and {{Security}} discusses security considerations.
 
 # Conventions and Definitions
 
@@ -524,250 +590,295 @@ The integrity part of GCM-SST was originally developed by ETSI SAGE, under the n
 
 The following notation is used in the document:
 
-* K is the key as defined in {{RFC5116}}
-* N is the nonce as defined in {{RFC5116}}
-* A is the associated data as defined in {{RFC5116}}
-* P is the plaintext as defined in {{RFC5116}}
+* K is the key, as defined in {{RFC5116}}
+* N is the nonce, as defined in {{RFC5116}}
+* A is the associated data, as defined in {{RFC5116}}
+* P is the plaintext, as defined in {{RFC5116}}
 * Z is the keystream
 * ct is the ciphertext
 * tag is the authentication tag
-* tag_length is the length of tag in bits
+* t is the authentication tag length, in bits
+* b is the block size, in bits
+* v is the number of forgery attempts
 * = is the assignment operator
 * ≠ is the inequality operator
-* x \|\| y is concatenation of the octet strings x and y
-* ⊕ is the bitwise exclusive or operator XOR
+* x \|\| y is concatenation of the byte strings x and y
+* ⊕ is the bitwise exclusive-OR (XOR) operator
 * len(x) is the length of x in bits
-* zeropad(x) right pads an octet string x with zeroes to a multiple of 128 bits
-* truncate(x, t) is the truncation operation.  The first t bits of x are kept
+* zeropad(x) right-pads the byte string x with zeros to a multiple of 128 bits
+* truncate(x, y) retains the first y bits of x and discards the remainder
 * n is the number of 128-bit chunks in zeropad(P)
 * m is the number of 128-bit chunks in zeropad(A)
 * POLYVAL is defined in {{RFC8452}}
 * BE32(x) is the big-endian encoding of 32-bit integer x
 * LE64(x) is the little-endian encoding of 64-bit integer x
-* V[y] is the 128-bit chunk with index y in the array V; the first chunk has index 0
-* V[x:y] are the range of 128-bit chunks x to y in the array V
+* V[x] is the 128-bit chunk at index x in array V; the first chunk has index 0
+* V[x:y] is the range of 128-bit chunks at indices x through y in array V
 
 # Galois Counter Mode with Strong Secure Tags (GCM-SST) {#GCM-SST}
 
-This section defines the Galois Counter Mode with Strong Secure Tags (GCM-SST) AEAD algorithm following the recommendations from Nyberg et al. {{Nyberg}}. GCM-SST is defined with a general interface so that it can be used with any keystream generator, not just a 128-bit block cipher.
+This section defines the GCM-SST AEAD algorithm following the recommendations of Nyberg et al. {{Nyberg}}. GCM-SST is defined with a general interface so that it can be used with any keystream generator, not only a 128-bit block cipher.
 
-GCM-SST adheres to an AEAD interface {{RFC5116}} and the encryption function takes four variable-length octet string parameters. A secret key K, a nonce N, the associated data A, and a plaintext P. The keystream generator is instantiated with K and N. The keystream MAY depend on P and A. The minimum and maximum lengths of all parameters depend on the keystream generator. The keystream generator produces a keystream Z consisting of 128-bit chunks where the first three chunks Z[0], Z[1], and Z[2] are used as the three subkeys H, H<sub>2</sub>, and M. The following keystream chunks Z[3], Z[4], ..., Z[n + 2] are used to encrypt the plaintext. Instead of GHASH {{GCM}}, GCM-SST makes use of the POLYVAL function from AES-GCM-SIV {{RFC8452}}, which results in more efficient software implementations on little-endian architectures. GHASH and POLYVAL can be defined in terms of one another {{RFC8452}}. The subkeys H and H<sub>2</sub> are field elements used in POLYVAL while the subkey M is used for the final masking of the tag. Both encryption and decryption are only defined on inputs that are a whole number of octets. Figures illustrating the GCM-SST encryption and decryption functions can be found in {{SST1}}, {{SST2}}, and {{Inoue}}.
+GCM-SST adheres to the AEAD interface defined in {{RFC5116}}. The encryption function takes four variable-length byte string parameters: a secret key K, a nonce N, associated data A, and a plaintext P. The keystream generator is instantiated with K and N. The keystream MAY depend on P and A. The minimum and maximum lengths of all parameters depend on the keystream generator.
 
-For every computational procedure that is specified in this document, a conforming implementation MAY replace the given set of steps with any mathematically equivalent set of steps. In other words, different procedures that produce the correct output for every input are permitted.
+The keystream generator produces a keystream Z consisting of 128-bit chunks. The first three chunks Z[0], Z[1], and Z[2] are used as authentication subkeys H and H<sub>2</sub>, and masking subkey M, respectively. The subsequent chunks Z[3], Z[4], ..., Z[n + 2] are used to encrypt the plaintext.
+
+In place of GHASH {{GCM}}, GCM-SST uses the POLYVAL function from AES-GCM-SIV {{RFC8452}}, which yields more efficient software implementations on little-endian architectures. GHASH and POLYVAL can be defined in terms of one another, as shown in {{RFC8452}}. The subkeys H and H<sub>2</sub> are field elements used as inputs to POLYVAL, while the subkey M is used for the final masking of the tag.
+
+Both the encryption and decryption functions are defined only on inputs comprising a whole number of bytes. Figures illustrating the GCM-SST encryption and decryption functions can be found in {{Campagna}}.
+
+For every computational procedure specified in this document, a conforming implementation MAY replace the given steps with any mathematically equivalent steps, provided the output is correct for every valid input.
 
 ## Authenticated Encryption Function
 
-The encryption function Encrypt(K, N, A, P) encrypts a plaintext and returns the ciphertext along with an authentication tag that verifies the authenticity of the plaintext and associated data, if provided.
+The encryption function Encrypt(K, N, A, P) encrypts a plaintext and returns the ciphertext together with an authentication tag that verifies the authenticity of both the plaintext and associated data, if provided.
 
-Prerequisites and security:
+Prerequisites and security requirements:
 
-* The key MUST be randomly chosen from a uniform distribution.
-
-* For a given key, a nonce MUST NOT be reused under any circumstances.
-
-* Each key MUST be restricted to a single tag_length.
-
-* Definitions of supported input-output lengths.
+* The key MUST be chosen uniformly at random.
+* For a given key, each nonce MUST be unique; random nonces MUST NOT be used.
+* Each key MUST be restricted to a single tag length t.
+* Supported input and output lengths MUST be defined.
 
 Inputs:
 
-* Key K (variable-length octet string)
-* Nonce N (variable-length octet string)
-* Associated data A (variable-length octet string)
-* Plaintext P (variable-length octet string)
+* Key K (variable-length byte string)
+* Nonce N (variable-length byte string)
+* Associated data A (variable-length byte string)
+* Plaintext P (variable-length byte string)
 
 Outputs:
 
-* Ciphertext ct (variable-length octet string)
-* tag (octet string with length tag_length)
+* Ciphertext ct (variable-length byte string)
+* tag (a byte string of length t / 8)
 
 Steps:
 
-1. If the lengths of K, N, A, P are not supported return error and abort
-2. Initiate keystream generator with K and N
+1. If the lengths of K, N, A, P are not supported, return an error and abort
+2. Instantiate the keystream generator with K and N
 3. Let H = Z[0], H<sub>2</sub> = Z[1], M = Z[2]
 4. Let ct = P ⊕ truncate(Z[3:n + 2], len(P))
 5. Let S = zeropad(A) \|\| zeropad(ct)
 6. Let L = LE64(len(ct)) \|\| LE64(len(A))
 7. Let X = POLYVAL(H, S[0], S[1], ...)
 8. Let full_tag = POLYVAL(H<sub>2</sub>, X ⊕ L) ⊕ M
-9. Let tag = truncate(full_tag, tag_length)
+9. Let tag = truncate(full_tag, t)
 10. Return (ct, tag)
 
 The encoding of L aligns with existing implementations of GCM.
 
 ## Authenticated Decryption Function
 
-The decryption function Decrypt(K, N, A, ct, tag) decrypts a ciphertext, verifies that the authentication tag is correct, and returns the plaintext on success or an error if the tag verification failed.
+The decryption function Decrypt(K, N, A, ct, tag) decrypts a ciphertext, verifies that the authentication tag is correct, and returns the plaintext on success or an error otherwise.
 
-Prerequisites and security:
+Prerequisites and security requirements:
 
-* The calculation of the plaintext P (step 10) MAY be done in parallel with the tag verification (step 3-9). If the tag verification fails, the plaintext P and the expected_tag MUST NOT be given as output.
-
-* Each key MUST be restricted to a single tag_length.
-
-* Definitions of supported input-output lengths.
+* The calculation of the plaintext P (step 10) MAY be done in parallel with tag verification (steps 3–9). If tag verification fails, the plaintext P MUST NOT be given as output.
+* Each key MUST be restricted to a single tag length t.
+* Supported input and output lengths MUST be defined.
 
 Inputs:
 
-* Key K (variable-length octet string)
-* Nonce N (variable-length octet string)
-* Associated data A (variable-length octet string)
-* Ciphertext ct (variable-length octet string)
-* tag (octet string with length tag_length)
+* Key K (variable-length byte string)
+* Nonce N (variable-length byte string)
+* Associated data A (variable-length byte string)
+* Ciphertext ct (variable-length byte string)
+* tag (a byte string of length t / 8)
 
 Outputs:
 
-* Plaintext P (variable-length octet string) or an error indicating that the authentication tag is invalid for the given inputs.
+* Plaintext P (variable-length byte string), or an error indicating that the authentication tag is invalid for the given inputs.
 
 Steps:
 
-1. If the lengths of K, N, A, or ct are not supported, or if len(tag) ≠ tag_length return error and abort
-2. Initiate keystream generator with K and N
+1. If the lengths of K, N, A, or ct are not supported, or if len(tag) ≠ t, return an error and abort
+2. Instantiate the keystream generator with K and N
 3. Let H = Z[0], H<sub>2</sub> = Z[1], M = Z[2]
 4. Let S = zeropad(A) \|\| zeropad(ct)
 5. Let L = LE64(len(ct)) \|\| LE64(len(A))
 6. Let X = POLYVAL(H, S[0], S[1], ...)
 7. Let full_tag = POLYVAL(H<sub>2</sub>, X ⊕ L) ⊕ M
-8. Let expected_tag = truncate(full_tag, tag_length)
-9. If tag ≠ expected_tag, return error and abort
+8. Let expected_tag = truncate(full_tag, t)
+9. If tag ≠ expected_tag, return an error and abort
 10. Let P = ct ⊕ truncate(Z[3:n + 2], len(ct))
-11. If N passes replay protection, return P
+11. If N fails replay protection, return an error and abort
+12. Return P
 
-The comparison of tag and expected_tag in step 9 MUST be performed in constant time to prevent any information leakage about the position of the first mismatched byte. For a given key, a plaintext MUST NOT be returned unless it is certain that a plaintext has not been returned for the same nonce. Replay protection can be performed either before step 1 or during step 11. Protocols with nonce-hiding mechanisms {{Bellare}}, such as QUIC {{RFC9001}}, implement replay protection after decryption to mitigate timing side-channel attacks.
+The comparison of tag and expected_tag in step 9 MUST be performed in constant time to prevent information leakage about the position of the first mismatched byte. For a given key, a plaintext MUST NOT be returned unless it is certain that no plaintext has previously been returned for the same nonce. Replay protection MAY be performed either before step 1 or during step 11. Protocols with nonce-hiding mechanisms {{Bellare19}}, such as QUIC {{RFC9001}}, implement replay protection after decryption to mitigate timing side-channel attacks. If tag validation or replay protection fails, intermediate values such as H, H<sub>2</sub>, M, Z, P, X, full_tag, and expected_tag MUST be destroyed (zeroized).
 
 ## Encoding (ct, tag) Tuples
 
-Applications MAY keep the ciphertext and the authentication tag in distinct structures or encode both as a single octet string C. In the latter case, the tag MUST immediately follow the ciphertext ct:
+Applications MAY store the ciphertext and the authentication tag in separate structures or encode both as a single byte string C. In the latter case, the tag MUST immediately follow the ciphertext ct:
 
-C = ct \|\| tag
+{: style=""}
+* C = ct \|\| tag   .
 
 # AES and Rijndael-256 in GCM-SST {#AES-GCM-SST}
 
-This section defines Advanced Encryption Standard (AES) and Rijndael with 256-bit keys and blocks (Rijndael-256) {{Rijndael}} in Galois Counter Mode with Strong Secure Tags.
+This section defines instantiations of GCM-SST using AES and Rijndael-256.
 
 ## AES-GCM-SST
 
-When GCM-SSM is instantiated with AES (AES-GCM-SST), the keystream generator is AES in counter mode
+When GCM-SST is instantiated with AES (AES-GCM-SST), the keystream generator is AES in counter mode
 
-Z[i] = ENC(K, N \|\| BE32(i))
+{: style=""}
+* Z[i] = ENC(K, N \|\| BE32(i))   ,
 
-where ENC is the AES Cipher function {{AES}}. Big-endian counters align with existing implementations of AES in counter mode.
+where ENC is the AES Cipher function {{AES}}. The use of big-endian counters aligns with existing AES counter mode implementations.
 
 ## Rijndael-GCM-SST
 
 When GCM-SST is instantiated with Rijndael-256 (Rijndael-GCM-SST), the keystream generator is Rijndael-256 in counter mode
 
-Z[2i]   = ENC(K, N \|\| BE32(i))[0]
-
-Z[2i+1] = ENC(K, N \|\| BE32(i))[1]
+{: style=""}
+* Z[2i]   = ENC(K, N \|\| BE32(i))[0]   ,
+* Z[2i+1] = ENC(K, N \|\| BE32(i))[1]   ,
 
 where ENC is the Rijndael-256 Cipher function {{Rijndael}}.
 
 ## AEAD Instances and Constraints {#instances}
 
-We define nine AEAD instances, in the format of {{RFC5116}}, that use AES-GCM-SST and Rijndael-GCM-SST with tag lengths of 48, 96, and 112 bits. The key length and tag length are related to different security properties, and an application encrypting audio packets with short tags might require high confidentiality.
+Nine AEAD algorithm instances are defined below, following the format of {{RFC5116}}. These instances use AES-GCM-SST or Rijndael-GCM-SST with tag lengths of 48, 96, or 112 bits.
 
-| Name | K_LEN (bytes) | P_MAX = A_MAX (bytes) | tag_length (bits) |
+| Name | K_LEN (bytes) | P_MAX = A_MAX (bytes) | Tag length t (bits) |
 | AEAD_AES_128_GCM_SST_6 | 16 | 2<sup>36</sup> - 48 | 48 |
-| AEAD_AES_128_GCM_SST_12 | 16 | 2<sup>35</sup> | 96 |
-| AEAD_AES_128_GCM_SST_14 | 16 | 2<sup>19</sup> | 112 |
+| AEAD_AES_128_GCM_SST_12 | 16 | 2<sup>32</sup> | 96 |
+| AEAD_AES_128_GCM_SST_14 | 16 | 2<sup>16</sup> | 112 |
 | AEAD_AES_256_GCM_SST_6 | 32 | 2<sup>36</sup> - 48 | 48 |
-| AEAD_AES_256_GCM_SST_12 | 32 | 2<sup>35</sup> | 96 |
-| AEAD_AES_256_GCM_SST_14 | 32 | 2<sup>19</sup> | 112 |
-| AEAD_RIJNDAEL_GCM_SST_6 | 32 | 2<sup>36</sup> - 48 | 48 |
-| AEAD_RIJNDAEL_GCM_SST_12 | 32 | 2<sup>35</sup> | 96 |
-| AEAD_RIJNDAEL_GCM_SST_14 | 32 | 2<sup>19</sup> | 112 |
-{: #iana-algs title="AEAD Algorithms" cols="l r r r"}
+| AEAD_AES_256_GCM_SST_12 | 32 | 2<sup>32</sup> | 96 |
+| AEAD_AES_256_GCM_SST_14 | 32 | 2<sup>16</sup> | 112 |
+| AEAD_RIJNDAEL_GCM_SST_6 | 32 | 2<sup>37</sup> - 48 | 48 |
+| AEAD_RIJNDAEL_GCM_SST_12 | 32 | 2<sup>32</sup> | 96 |
+| AEAD_RIJNDAEL_GCM_SST_14 | 32 | 2<sup>16</sup> | 112 |
+{: #iana-algs title="AEAD Algorithm Instances for AES-GCM-SST and Rijndael-GCM-SST" cols="l r r r"}
 
-Common parameters for the six AEAD instances:
+The following parameters apply to all the instances:
 
-* N_MIN = N_MAX (minimum and maximum size of the nonce) is 12 octets for AES, while for Rijndael-256, it is 28 bytes.
+* N_MIN = N_MAX (minimum and maximum nonce length) is 12 bytes for AES-GCM-SST and 28 bytes for Rijndael-GCM-SST.
+* C_MAX (maximum ciphertext length, including the tag) is P_MAX + t / 8 bytes.
+* Q_MAX (maximum number of encryption function invocations) is 2<sup>32</sup> for AES-GCM-SST and 2<sup>64</sup> for Rijndael-GCM-SST.
+* V_MAX (maximum number of decryption function invocations) is 2<sup>54</sup> for AES-GCM-SST and 2<sup>118</sup> for Rijndael-GCM-SST.
 
-* C_MAX (maximum size of the ciphertext and tag) is P_MAX + tag_length (in bytes)
+Assuming a sufficiently large key size such that brute-force key-recovery attacks can be neglected, a strong integrity mechanism should satisfy
 
-* Q_MAX (maximum number of invocations of the encryption function) is 2<sup>32</sup> for AES-GCM-SST, while for Rijndael-GCM-SST, it is 2<sup>88</sup>.
+{: style=""}
+* E(F) ≈ v / 2<sup>t</sup> ,
 
-* V_MAX (maximum number of invocations of the decryption function) is 2<sup>48</sup> for AES-GCM-SST, while for Rijndael-GCM-SST, it is 2<sup>88</sup>.
+for all permitted invocation counts, plaintext lengths, associated data lengths, and tag lengths. This is how users expect MAC algorithms to behave, i.e., the behavior of an ideal MAC. The limits specified for AES-GCM-SST and Rijndael-GCM-SST are chosen to achieve this property in unicast settings with replay protection and are therefore more restrictive than the corresponding limits for GCM in {{RFC5116}}.
 
-The maximum size of the plaintext (P_MAX) and the maximum size of the associated data (A_MAX) have been lowered from GCM {{RFC5116}}. To enable forgery probability close to ideal, even with maximum size plaintexts and associated data, we set P_MAX = A_MAX = min(2<sup>131 - tag_length</sup>, 2<sup>36</sup> - 48). Protocols that employ GCM-SST MAY impose stricter limits on P_MAX and A_MAX. Just like {{RFC5116}}, AES-GCM-SST and Rijndael-GCM-SST only allow a fixed nonce length (N_MIN = N_MAX) of 96 bits and 224 bits, respectively. For the AEAD algorithms in {{iana-algs}} the worst-case forgery probability is bounded by ≈ 1 / 2<sup>tag_length</sup> {{Nyberg}}. This is true for all allowed plaintext and associated data lengths.
+To ensure that v / 2<sup>t</sup> is the dominant term in the integrity advantage {{Inoue}} for all permitted plaintext and associated data lengths, this document sets:
 
-The V_MAX constraint ensures that the Bernstein bound factor is δ ≈ 1 for AES-GCM-SST in protocols where P_MAX + A_MAX ≈ 2<sup>16</sup>, such as QUIC {{RFC9000}}, and always δ ≈ 1 for Rijndael-GCM-SST. In addition to restricting the Bernstein bound factor, the Q_MAX constraint establishes a minimum threshold for the complexity of distinguishing attacks and a maximum threshold for the fraction of a plaintext bit that an attacker can recover. Since encryption and decryption queries play an equivalent role in the Bernstein bound, it follows that Q_MAX ≤ V_MAX. Protocols that employ GCM-SST MAY impose stricter limits on Q_MAX and V_MAX.
+{: style=""}
+* P_MAX = A_MAX = min(2<sup>128 - t</sup>, 2<sup>32</sup> ⋅ b / 8 - 48)   ,
 
-Protocols utilizing AES-GCM-SST MUST enforce stricter limits on P_MAX, A_MAX, Q_MAX, and/or V_MAX to ensure that (P_MAX + A_MAX) ⋅ (Q_MAX + V_MAX) ⪅ 2<sup>66</sup>. This ensures that δ ≈ 1.
+where b is the block size in bits. This ensures that the integrity advantage is ≈ δ ⋅ v / 2<sup>t</sup>.
 
-Protocols utilizing AES-GCM-SST MUST enforce stricter limits on P_MAX and/or Q_MAX to ensure that Q_MAX ⋅ P_MAX ⪅ 2<sup>63</sup>. This aligns with {{ANSSI}} requirements and ensures that an attacker cannot recover more than ≈ 1 / 2<sup>10.47</sup> ≈ 0.0007 bits of the plaintexts {{Entropy}}.
+For AES, the 128-bit block size implies that achieving δ ≈ 1 requires balancing the constraints on Q_MAX and P_MAX. To ensure that the Bernstein bound factor {{Bernstein}}{{Iwata}} satisfies δ ≈ 1, protocols using AES-GCM-SST MUST enforce stricter limits on Q_MAX and/or P_MAX such that:
 
-Refer to Sections {{Int}}{: format="counter"}, {{Conf}}{: format="counter"}, and {{Comp}}{: format="counter"} for further details.
+{: style=""}
+* Q_MAX ⋅ P_MAX / 16 ⪅ 2<sup>59</sup>   .
+
+ For Rijndael-256, the 256-bit block size already guarantees δ ≈ 1. Protocols employing Rijndael-GCM-SST MAY impose stricter limits on P_MAX, A_MAX, Q_MAX, and V_MAX.
+
+In addition to bounding δ, the Q_MAX and P_MAX constraints establish a minimum complexity for distinguishing attacks and an upper bound on the fraction of plaintext bits recoverable by an attacker. This aligns with the European {{ACM}} recommendation of limiting the number of block-cipher invocations to 2<sup>b/2-5</sup>. This ensures that an attacker cannot recover more than ≈ 0.0007 bits across all plaintexts {{Entropy}} and that δ ⪅ 1.0005.
+
+To align with zero-trust principles and minimize the impact of key compromise, protocols using GCM-SST SHOULD enforce rekeying well before reaching the cryptographic limits. Modern guidance recommends rekeying via ephemeral key exchange providing Forward Secrecy (FS) and Post-Compromise Security (PCS) after 1 hour or 2<sup>30</sup>–2<sup>37</sup> bytes {{RFC4253}}{{ANSSI}}.
+
+{::comment}
+Q_MAX = 2^32 and 2^64 is taken from the GCM and wGCM invocation limit
+P_MAX = A_MAX <≈ 2^(128 - t) ensures that ℓ/2^128 << 1 / 2^t. 2^-t + 2^-(t+3) is not optimal, but chosen so that P_MAX is 2^16 and 2^32. The forgery probability is 1 / 2^95.83
+The Naito bound use the fact that (ql + v)^2 > (ql)^2 + v^2
+0.0007 ≈ 1 / 2^10.47 ≈ (2^59)^2 / 2^129 / ln 4
+2^59 << 2^(b+1)/2 = 2^64.5
+2^30–2^37 bytes is approximately 1–100 GB
+{:/}
 
 # Security Considerations {#Security}
 
-GCM-SST introduces an additional subkey H<sub>2</sub>, alongside the subkey H. The inclusion of H<sub>2</sub> enables truncated tags with forgery probabilities close to ideal. Both H and H<sub>2</sub> are derived for each nonce, which significantly decreases the probability of multiple successful forgeries. These changes are based on proven theoretical constructions and follows the recommendations in {{Nyberg}}. Inoue et al. {{Inoue}} prove that GCM-SST is a provably secure authenticated encryption mode, with security guaranteed for evaluations under fresh nonces, even if some earlier nonces have been reused.
+GCM-SST introduces a second authentication subkey H<sub>2</sub>, alongside the subkey H. The inclusion of H<sub>2</sub> enables truncated tags with forgery probabilities close to ideal. Both H and H<sub>2</sub> are derived for each nonce, which significantly decreases the probability of multiple successful forgeries. These changes are based on proven theoretical constructions and follow the recommendations in {{Nyberg}}. Inoue et al. {{Inoue}} prove that GCM-SST achieves its v / 2<sup>t</sup> design goal in the single-key setting, and that it provides nonce-misuse resilience {{NMRL}}. Because the subkeys in GCM-SST are derived independently per nonce, any confidentiality or integrity advantage an adversary gains against one nonce, whether through nonce misuse or a successful forgery attempt, does not carry over to a different, fresh nonce: GCM-SST recovers its full security as soon as such a nonce is no longer in use. Naito et al. {{Naito}} derive a tighter single-key bound and further prove that GCM-SST achieves its v / 2<sup>t</sup> design goal in the multi-key setting, including when combined with nonce randomization and nonce-based key derivation.
 
-GCM-SST is designed for use in security protocols with replay protection. Every key MUST be randomly chosen from a uniform distribution. GCM-SST MUST be used in a nonce-respecting setting: for a given key, a nonce MUST only be used once in the encryption function and only once in a successful decryption function call. The nonce MAY be public or predictable. It can be a counter, the output of a permutation, or a generator with a long period. The reuse of nonces in successful encryption and decryption function calls enables universal forgery, as demonstrated by {{Joux}}, {{Lindell}}, and {{Inoue}}. Therefore, GCM-SST MUST be used with replay protection. Additionally, GCM-SST MUST NOT be used with random nonces, as this significantly reduces the efficiency of replay protection. For a given tag length, GCM-SST has strictly better security properties than GCM. GCM allows universal forgery with lower complexity than GCM-SST, even when nonces are not reused. Implementations SHOULD add randomness to the nonce by XORing a unique number like a sequence number with a per-key random secret salt of the same length as the nonce. This significantly improves security against precomputation attacks and multi-key attacks {{Bellare}} and is for example implemented in TLS 1.3 {{RFC8446}}, OSCORE {{RFC8613}}, and {{Ascon}}. By increasing the nonce length from 96 bits to 224 bits, Rijndael-GCM-SST can offer significantly greater security against precomputation and multi-key attacks compared to AES-256-GCM-SST.
+GCM-SST is designed for use in security protocols with replay protection. Each key MUST be chosen uniformly at random. GCM-SST MUST be used in a nonce-respecting setting: for a given key, a nonce MUST be used at most once in the encryption function and at most once in a successful decryption function call. The nonce MAY be public or predictable. It can be a counter, the output of a permutation, or a generator with a long period. The reuse of nonces in successful encryption and decryption function calls enables universal forgery, as demonstrated by {{Joux}}, {{Lindell}}, and {{Inoue}}, and so GCM-SST MUST be used with replay protection. Additionally, GCM-SST MUST NOT be used with random nonces: besides reducing the efficiency of replay protection, they introduce a nonce-collision probability that degrades security bounds. Implementations SHOULD add randomness to the nonce by XORing a unique number such as a sequence number with a per-key random secret salt of the same length as the nonce. This significantly improves security against precomputation and multi-key attacks {{Bellare17}} and is implemented, for example, in SRTP {{RFC3711}}, TLS 1.3 {{RFC8446}}, OSCORE {{RFC8613}}, and {{Ascon}}. By increasing the nonce length from 96 bits to 224 bits, Rijndael-GCM-SST can offer significantly greater security against precomputation and multi-key attacks compared to AES-GCM-SST. GCM-SST does not aim for full nonce-misuse resistance {{NMR}}. Like GCM, it derives its keystream in a single pass, avoiding the two-pass, non-online structure that nonce-misuse-resistant algorithms require. NIST is addressing nonce-misuse resistance through the planned Accordions {{Accordions}}.
 
-Refer to {{onemany}} for considerations on using GCM-SST in multicast or broadcast scenarios. Unless otherwise specified, formulas for expected number of forgeries apply to unicast scenarios.
+Unless otherwise specified, formulas for the expected number of forgeries apply to unicast scenarios.
 
 ## Integrity {#Int}
 
-The GCM-SST tag_length SHOULD NOT be smaller than 4 bytes and cannot be larger than 16 bytes. Let ℓ = (P_MAX + A_MAX) / 16 + 1. When tag_length < 128 - log2(ℓ) bits, the worst-case forgery probability is bounded by ≈ 1 / 2<sup>tag_length</sup> {{Nyberg}}. The tags in the AEAD algorithms listed in {{instances}} therefore have an almost perfect security level. This is significantly better than GCM where the security level is only tag_length - log2(ℓ) bits {{GCM}}. For a graph of the forgery probability, refer to Fig. 3 in {{Inoue}}. As one can note, for 128-bit tags and long messages, the forgery probability is not close to ideal and similar to GCM {{GCM}}. If tag verification fails, the plaintext and expected_tag MUST NOT be given as output. In GCM-SST, the full_tag is independent of the specified tag length unless the application explicitly incorporates tag length into the keystream or the nonce.
+The GCM-SST tag length t SHOULD NOT be smaller than 32 bits and cannot be larger than 128 bits. Let ℓ = (P_MAX + A_MAX) / 16 + 1. When ℓ ≪ 2<sup>128 - t</sup>, the forgery probability is ≈ 1 / 2<sup>t</sup> {{Nyberg}}{{Inoue}}. The tags in the AEAD algorithms listed in {{instances}} therefore achieve near-ideal forgery probabilities. This is a significant improvement over GCM {{GCM}}, where the forgery probability is bounded by ⪅ δ ⋅ ℓ / 2<sup>t</sup> {{GCM}}{{Iwata}}. For a graph of the forgery probability assuming δ ≈ 1, see Fig. 3 in {{Inoue}}. For 128-bit tags and long messages, the forgery probability of GCM-SST is no longer ideal and becomes comparable to that of GCM. In GCM-SST, the full_tag is independent of t unless the application explicitly incorporates t into the keystream or the nonce.
 
-The expected number of forgeries, when tag_length < 128 - log2(ℓ) bits, depends on the keystream generator. For an ideal keystream generator, the expected number of forgeries is ≈ v / 2<sup>tag_length</sup>, where v is the number of decryption queries, which is ideal. For AES-GCM-SST, the expected number of forgeries is ≈ δ<sub>128</sub> ⋅ v / 2<sup>tag_length</sup>, where the Bernstein bound factor δ<sub>b</sub> ⪅ 1 + (q + v)<sup>2</sup> ⋅ ℓ<sup>2</sup> / 2<sup>b+1</sup>, which is ideal when δ<sub>128</sub> ≈ 1. This far outperforms AES-GCM, where the expected number of forgeries is ≈ δ<sub>128</sub> ⋅ v<sup>2</sup> ⋅ ℓ / 2<sup>tag_length+1</sup>. For Rijndael-GCM-SST, the expected number of forgeries is ≈ δ<sub>256</sub> ⋅ v / 2<sup>tag_length</sup> ≈ v / 2<sup>tag_length</sup>, which is ideal. For further details on the integrity advantages and expected number of forgeries for GCM and GCM-SST, see {{Iwata}}, {{Inoue}}, {{Bernstein}}, and {{Multiple}}. BSI states that an ideal MAC with a 96-bit tag length is considered acceptable for most applications {{BSI}}, a requirement that GCM-SST with 96-bit tags satisfies when δ ≈ 1. Achieving a comparable level of security with GCM, CCM, or Poly1305 is nearly impossible.
+The expected number of forgeries depends on the keystream generator. For block ciphers in counter mode, it is governed by the birthday bound, with AES-based ciphers particularly constrained by their narrow 128-bit block size. Assuming a sufficiently large key size such that brute-force key-recovery attacks can be neglected, a strong integrity mechanism should satisfy
+
+{: style=""}
+* E(F) ≈ v / 2<sup>t</sup>   ,
+
+where v is the number of forgery attempts. Following the constraints in {{instances}}, AES-GCM-SST and Rijndael-GCM-SST achieve this ideal. AES-GCM-SST significantly outperforms AES-GCM {{GCM}}, for which the expected number of forgeries (assuming deterministic 96-bit nonces) is bounded by:
+
+{: style=""}
+* E(F) ⪅ δ ⋅ v<sup>2</sup> ⋅ ℓ / 2<sup>t+1</sup>   .
+
+For further details on the integrity advantages and expected number of forgeries for GCM and GCM-SST, see {{Iwata}}, {{Niwa}}, {{Inoue}}, {{Naito}}, and {{Multiple}}. BSI states that an ideal MAC with a 96-bit tag length is considered acceptable for most applications {{BSI}}, a requirement that GCM-SST with 96-bit tags satisfies when ℓ ⪅ 2<sup>32</sup> and δ ≈ 1. Achieving a comparable level of security with GCM, CCM, or Poly1305 is nearly impossible.
+
+{::comment}
+(1) For GCM it is known that Adv ⪅ δ ⋅ v ⋅ ℓ / 2<sup>t</sup> [Iwata]
+(2) For GCM it is known that assuming δ ≈ 1, forgery probability ≈ ℓ / 2<sup>t</sup> [Ferguson]
+(3) For GCM it is known that assuming δ ≈ 1, E(F) ≈ v<sup>2</sup> ⋅ ℓ / 2<sup>t+1</sup> [McGrew]
+(4) The bound (1) can be used to show that forgery probability ⪅ δ ⋅ ℓ / 2<sup>t</sup>
+(5) The bound (4) can be used to show that E(F) ⪅ δ ⋅ v<sup>2</sup> ⋅ ℓ / 2<sup>t+1</sup>
+{:/}
 
 ## Confidentiality {#Conf}
 
-The confidentiality offered by GCM-SST against passive attackers depends on the keystream generator. For block ciphers in counter mode it is determined by the birthday bound, with AES-based ciphers particularly constrained by their narrow 128-bit block size. For AES-GCM-SST, the confidentiality is equal to AES-GCM {{GCM}}. Regardless of key length, an attacker can mount a distinguishing attack with a complexity of approximately 2<sup>129</sup> / σ, where σ ⪅ P_MAX ⋅ Q_MAX / 16 is is the total plaintext length measured in 128-bit chunks. In contrast, the confidentiality offered by Rijndael-GCM-SST against passive attackers is significantly higher. The complexity of distinguishing attacks for Rijndael-GCM-SST is approximately 2<sup>258</sup> / σ. McGrew, Leurent, and Sibleyras {{Impossible}}{{Difference}} demonstrate that for block ciphers in counter mode, an attacker with partial knowledge of the plaintext can execute plaintext-recovery attacks against counter mode with roughly the same complexity (up to logaritmic factors) as distinguishing attacks. However, Preuß Mattsson {{Entropy}} demonstrated that an attacker cannot recover more than ≈ σ<sup>2</sup> / 2<sup>b</sup> bits of the plaintext, where b is the block size. Given the constraints outlined in {{instances}}, an attacker cannot recover more than 0.0007 bits of AES-GCM-SST plaintexts.
+The confidentiality offered by GCM-SST against passive attackers depends on the keystream generator. For block ciphers in counter mode, it is governed by the birthday bound, with AES-based ciphers particularly constrained by their narrow 128-bit block size. For AES-GCM-SST, the confidentiality is equal to AES-GCM {{GCM}}. Regardless of key length, an attacker can mount a distinguishing attack with a complexity of approximately 2<sup>129</sup> / σ, where σ ⪅ P_MAX ⋅ Q_MAX / 16 is the total plaintext length measured in 128-bit chunks. In contrast, the confidentiality offered by Rijndael-GCM-SST against passive attackers is significantly higher. The complexity of distinguishing attacks for Rijndael-GCM-SST is approximately 2<sup>258</sup> / σ. McGrew {{Impossible}} and Leurent and Sibleyras {{Difference}} demonstrate that for block ciphers in counter mode, an attacker with partial knowledge of the plaintext can execute plaintext-recovery attacks against counter mode with roughly the same complexity (up to logarithmic factors) as distinguishing attacks. However, Preuß Mattsson {{Entropy}} demonstrated that an attacker cannot recover more than ≈ σ<sup>2</sup> / 2<sup>b</sup> bits of the plaintext. Given the constraints outlined in {{instances}}, an attacker cannot recover more than 0.0007 bits of AES-GCM-SST plaintexts.
 
-While Rijndael-256 in counter mode can provide 128-bit confidentiality for plaintexts much larger than 2<sup>36</sup> octets, GHASH and POLYVAL do not offer adequate integrity for long plaintexts. To ensure robust integrity for long plaintexts, an AEAD mode would need to replace POLYVAL with a MAC that has better security properties, such as a Carter-Wegman MAC in a larger field {{Degabriele}} or other alternatives such as {{SMAC}}.
+While Rijndael-256 in counter mode can provide high confidentiality for plaintexts much larger than 2<sup>37</sup> bytes, GHASH and POLYVAL do not offer adequate integrity for long plaintexts. To ensure robust integrity for long plaintexts, an AEAD mode would need to replace POLYVAL with a MAC that has better security properties, such as a Carter-Wegman MAC in a larger field {{Maximov}}{{Degabriele}} or other alternatives such as {{SMAC}}.
 
 The confidentiality offered by GCM-SST against active attackers is directly linked to the forgery probability. Depending on the protocol and application, forgeries can significantly compromise privacy, in addition to affecting integrity and authenticity. It MUST be assumed that attackers always receive feedback on the success or failure of their forgery attempts. Therefore, attacks on integrity, authenticity, and confidentiality MUST all be carefully evaluated when selecting an appropriate tag length.
 
-## Weak keys
+## Weak Keys
 
-In general, there is a very small possibility in GCM-SST that either or both of the subkeys H and H<sub>2</sub> are zero, so called weak keys. If H is zero, the authentication tag depends only on the length of P and A and not on their content. If H<sub>2</sub> is zero, the authentication tag does not depend on P and A. Due to the masking with M, there are no obvious ways to detect this condition for an attacker, and the specification admits this possibility in favor of complicating the flow with additional checks and regeneration of values. In AES-GCM-SST, H and H<sub>2</sub> are generated with a permutation on different input, so H and H<sub>2</sub> cannot both be zero.
+In general, there is a very small possibility in GCM-SST that either or both of the subkeys H and H<sub>2</sub> are zero, so-called weak keys. If H is zero, the authentication tag depends only on the length of P and A and not on their content. If H<sub>2</sub> is zero, the authentication tag does not depend on P and A. Due to the masking with M, there are no obvious ways to detect this condition for an attacker, and the specification admits this possibility rather than complicating implementations with additional checks and regeneration of values. In AES-GCM-SST, H and H<sub>2</sub> are generated with a permutation on different inputs, so H and H<sub>2</sub> cannot both be zero.
 
 ## Replay Protection
 
-The details of the replay protection mechanism is determined by the security protocol utilizing GCM-SST. If the nonce includes a sequence number, it can be used for replay protection. Alternatively, a separate sequence number can be used, provided there is a one-to-one mapping between sequence numbers and nonces. The choice of a replay protection mechanism depends on factors such as the expected degree of packet reordering, as well as protocol and implementation details. For examples of replay protection mechanisms, see {{RFC4303}} and {{RFC6479}}. Implementing replay protection by requiring ciphertexts to arrive in order and terminating the connection if a single decryption fails is NOT RECOMMENDED as this approach reduces robustness and availability while exposing the system to denial-of-service attacks {{Robust}}.
+The details of the replay protection mechanism are determined by the security protocol utilizing GCM-SST. If the nonce includes a sequence number, it can be used for replay protection. Alternatively, a separate sequence number can be used, provided there is a one-to-one mapping between sequence numbers and nonces. The choice of a replay protection mechanism depends on factors such as the expected degree of packet reordering, as well as protocol and implementation details. For examples of replay protection mechanisms, see {{RFC4303}} and {{RFC6479}}. Implementing replay protection by requiring ciphertexts to arrive in order and terminating the connection if a single decryption fails is NOT RECOMMENDED, as this approach reduces robustness and availability and exposes the system to denial-of-service attacks {{Robust}}.
 
 ## Comparison with ChaCha20-Poly1305 and AES-GCM {#Comp}
 
-{{comp1}} compares the integrity of GCM-SST, ChaCha20-Poly1305 {{RFC7539}}, and AES-GCM {{RFC5116}} in unicast security protocols with replay protection, where v represents the number of decryption queries. In Poly1305 and GCM, the forgery probability depends on ℓ = (P_MAX + A_MAX) / 16 + 1. In AES-based algorithms, the Bernstein bound introduces a factor δ ⪅ 1 + (q + v)<sup>2</sup> ⋅ ℓ<sup>2</sup> / 2<sup>129</sup>. GCM-SST requires δ ≈ 1, a property not mandated by GCM. Notably, GCM does not provide any reforgeability resistance, which significantly increases the expected number of forgeries. Refer to {{Procter}}, {{Iwata}}, and {{Multiple}} for further details.
+{{comp1}} compares the integrity of GCM-SST, ChaCha20-Poly1305 {{RFC8439}}, and AES-GCM {{RFC5116}} in unicast security protocols with replay protection. In both Poly1305 and GCM, the forgery probability depends on ℓ; in GCM, it additionally involves the Bernstein bound factor δ. GCM-SST requires δ ≈ 1, a property that GCM does not mandate. Furthermore, GCM provides no reforgeability resistance, which substantially increases the expected number of forgeries. See {{Procter}}, {{Iwata}}, and {{Multiple}} for further details.
 
-| Name | Forgery probability before first forgery | Forgery probability after first forgery| Expected number of forgeries |
-| GCM_SST_14 | 1 / 2<sup>112</sup> | 1 / 2<sup>112</sup> | v / 2<sup>112</sup> |
-| GCM_SST_12 | 1 / 2<sup>96</sup> | 1 / 2<sup>96</sup> | v / 2<sup>96</sup> |
-| POLY1305 | ℓ / 2<sup>103</sup> | ℓ / 2<sup>103</sup> | v ⋅ ℓ / 2<sup>103</sup> |
-| GCM | ℓ / 2<sup>128</sup> | 1 | δ&nbsp;⋅&nbsp;v<sup>2</sup>&nbsp;⋅&nbsp;ℓ&nbsp;/&nbsp;2<sup>129</sup> |
-{: #comp1 title="Comparison of integrity among GCM-SST, ChaCha20-Poly1305, and AES-GCM in unicast security protocols with replay protection. v is the number of decryption queries, ℓ is the maximum length of plaintext and associated data, measured in 128-bit chunks, and δ is the Bernstein bound factor." cols="l r r r"}
+| Name | Tag length (bytes) | Forgery probability before first forgery | Forgery probability after first forgery| Expected number of forgeries |
+| GCM_SST_14 | 14 | 1 / 2<sup>112</sup> | 1 / 2<sup>112</sup> | v / 2<sup>112</sup> |
+| GCM_SST_12 | 12 | 1 / 2<sup>96</sup> | 1 / 2<sup>96</sup> | v / 2<sup>96</sup> |
+| POLY1305 | 16 | ℓ / 2<sup>103</sup> | ℓ / 2<sup>103</sup> | v ⋅ ℓ / 2<sup>103</sup> |
+| GCM | 16 | ℓ / 2<sup>128</sup> | 1 | v<sup>2</sup>&nbsp;⋅&nbsp;ℓ&nbsp;/&nbsp;2<sup>129</sup> |
+{: #comp1 title="Comparison of integrity among GCM-SST, ChaCha20-Poly1305, and AES-GCM in unicast security protocols with replay protection. v is the number of forgery attempts, ℓ is the maximum length of plaintext and associated data, measured in 128-bit chunks. The GCM values assume δ ≈ 1; when this condition does not hold, the GCM values are worse than those shown." cols="l r r r r"}
 
-{{comp2}} compares the integrity of GCM-SST, ChaCha20-Poly1305 {{RFC7539}}, and AES-GCM {{RFC5116}} in unicast QUIC {{RFC9000}}{{RFC9001}}, a security protocol with mandatory replay protection, and where the combined size of plaintext and associated data is less than ≈ 2<sup>16</sup> bytes (ℓ ≈ 2<sup>12</sup>). GCM_SST_14 and GCM_SST_12 provide better integrity than ChaCha20-Poly1305 {{RFC7539}} and AES-GCM {{RFC5116}}, while also reducing overhead by 2–4 bytes. For GCM-SST and ChaCha20-Poly1305, the expected number of forgeries is linear in v when replay protection is employed. ChaCha20-Poly1305 achieves a security level equivalent to that of an ideal MAC with a length of 91 bits. For AES-GCM, replay protection does not mitigate reforgeries, the expected number of forgeries grows quadratically with v, and GCM provides significantly worse integrity than GCM-SST and ChaCha20-Poly1305 unless v is kept very small. With v = 2<sup>52</sup> as allowed for AES-GCM in QUIC {{RFC9001}}, the expected number of forgeries for AES-GCM is equivalent to that of an ideal MAC with a length of 64.4 bits. The effective tag length of AES-GCM in QUIC is 117 - log2(δ ⋅ v).
+{{comp2}} compares the integrity of GCM-SST, ChaCha20-Poly1305 {{RFC8439}}, and AES-GCM {{RFC5116}} in unicast QUIC {{RFC9000}}{{RFC9001}}, a security protocol with mandatory replay protection, and where the combined size of plaintext and associated data is less than ≈ 2<sup>16</sup> bytes (ℓ ≈ 2<sup>12</sup>). GCM_SST_14 and GCM_SST_12 provide better integrity than ChaCha20-Poly1305 {{RFC8439}} and AES-GCM {{RFC5116}}, while also reducing overhead by 2–4 bytes. For GCM-SST and ChaCha20-Poly1305, the expected number of forgeries is linear in v when replay protection is employed. ChaCha20-Poly1305 achieves a security level equivalent to that of an ideal MAC with a length of 91 bits. For AES-GCM, replay protection does not mitigate reforgeries, the expected number of forgeries grows quadratically with v, and GCM provides significantly worse integrity than GCM-SST and ChaCha20-Poly1305 unless v is kept very small. With v = 2<sup>52</sup> as allowed for AES-GCM in QUIC {{RFC9001}}, the expected number of forgeries for AES-GCM exceeds that of an ideal 65-bit MAC.
 
 | Name | Tag length (bytes) | Forgery probability before first forgery | Forgery probability after first forgery| Expected number of forgeries |
 | GCM_SST_14 | 14 | 1 / 2<sup>112</sup> | 1 / 2<sup>112</sup> | v / 2<sup>112</sup> |
 | GCM_SST_12 | 12 |1 / 2<sup>96</sup> | 1 / 2<sup>96</sup> | v / 2<sup>96</sup> |
 | POLY1305 | 16 |1 / 2<sup>91</sup> | 1 / 2<sup>91</sup> | v / 2<sup>91</sup> |
-| GCM | 16 | 1 / 2<sup>116</sup> | 1 | δ&nbsp;⋅&nbsp;v<sup>2</sup>&nbsp;/&nbsp;2<sup>117</sup> |
-{: #comp2 title="Comparison of integrity among GCM-SST, ChaCha20-Poly1305, and AES-GCM in unicast QUIC, where the maximum packet size is 65536 bytes." cols="l r r r r"}
+| GCM | 16 | 1 / 2<sup>116</sup> | 1 | v<sup>2</sup>&nbsp;/&nbsp;2<sup>117</sup> |
+{: #comp2 title="Comparison of integrity among GCM-SST, ChaCha20-Poly1305, and AES-GCM in unicast QUIC, where the maximum packet size is 65536 bytes. The GCM values assume δ ≈ 1; when this condition does not hold, the GCM values are worse than those shown." cols="l r r r r"}
 
-{{comp3}} compares the confidentiality of Rijndael-GCM-SST, AES-256-GCM-SST, SNOW 5G-GCM-SST, and ChaCha20-Poly1305 {{RFC7539}}, all of which use 256-bit keys, against passive attackers. The confidentiality of block ciphers in counter mode is determined by the birthday bound, with AES-based ciphers particularly constrained by their narrow 128-bit block size. While plaintext-recovery attacks on block ciphers in counter mode have a complexity similar to distinguishing attacks, the attacker cannot recover more than ≈ σ<sup>2</sup> / 2<sup>b</sup> bits of the plaintexts {{Entropy}}.
+{{comp3}} compares the confidentiality of Rijndael-GCM-SST, AES-256-GCM-SST, SNOW 5G-GCM-SST, and ChaCha20-Poly1305 {{RFC8439}}, all of which use 256-bit keys, against passive attackers. The confidentiality of block ciphers in counter mode is governed by the birthday bound, with AES-based ciphers particularly constrained by their narrow 128-bit block size. While plaintext-recovery attacks on block ciphers in counter mode have a complexity similar to distinguishing attacks, the attacker cannot recover more than ≈ σ<sup>2</sup> / 2<sup>b</sup> bits of the plaintexts {{Entropy}}.
 
 | Name | Key size (bits) | Complexity of distinguishing attacks |
 | CHACHA20_POLY1305 | 256 | 2<sup>256</sup> |
 | SNOW_5G_GCM_SST | 256 | 2<sup>256</sup> |
 | RIJNDAEL_GCM_SST | 256 | ≈ 2<sup>258</sup> / σ |
 | AES_256_GCM_SST | 256 | ≈ 2<sup>129</sup> / σ |
-{: #comp3 title="Comparison of confidentiality against passive attackers among Rijndael-GCM-SST, SNOW 5G-GCM-SST, ChaCha20-Poly1305, and AES-256-GCM. σ is is the total plaintext length measured in 128-bit chunks." cols="l c c"}
+{: #comp3 title="Comparison of confidentiality against passive attackers among Rijndael-GCM-SST, SNOW 5G-GCM-SST, ChaCha20-Poly1305, and AES-256-GCM-SST. σ is the total plaintext length measured in 128-bit chunks." cols="l c c"}
 
 ## Multicast and Broadcast {#onemany}
 
 While GCM-SST offers stronger security properties than GCM for a given tag length in multicast or broadcast contexts, it does not behave exactly like an ideal MAC. With an ideal MAC, a successful forgery against one recipient allows the attacker to reuse the same forgery against all other recipients. In contrast, with GCM, a successful forgery against one recipient enables the attacker to generate an unlimited number of new forgeries for all recipients.
 
-With GCM-SST, a few successful forgeries against a few recipients allow the attacker to create one new forgery for all other recipients. While the total number of forgeries in GCM-SST matches that of an ideal MAC, the diversity of these forgeries is higher. To achieve one distinct forgery per recipient with an ideal MAC, the attacker would need to send on average 2<sup>tag_length</sup> forgery attempts to each recipient. GCM-SST performs equally well or better than an ideal MAC with length tag_length - log2(r), where r is the number of recipients. Thus, in one-to-many scenarios with replay protection, the expected number of distinct forgeries is ≈ v ⋅ r / 2<sup>tag_length</sup>, and the effective tag length of GCM-SST is tag_length - log2(r).
+With GCM-SST, a few successful forgeries against a few recipients allow the attacker to create one new forgery for all other recipients. While the total number of forgeries in GCM-SST matches that of an ideal MAC, the diversity of these forgeries is higher. To achieve one distinct forgery per recipient with an ideal MAC, the attacker would need to send on average 2<sup>t</sup> forgery attempts to each recipient. In one-to-many scenarios with replay protection and r recipients, the expected number of distinct forgeries is ≈ v ⋅ r / 2<sup>t</sup>.
 
 # IANA Considerations
 
-IANA is requested to assign the entries in the first column of {{iana-algs}} to the "AEAD Algorithms" registry under the "Authenticated Encryption with Associated Data (AEAD) Parameters" heading with this document as reference.
+IANA is requested to assign the algorithm names listed in the first column of {{iana-algs}} to the "AEAD Algorithms" registry under the registry group "Authenticated Encryption with Associated Data (AEAD) Parameters", with this document as the reference.
 
 --- back
 
@@ -955,7 +1066,7 @@ IANA is requested to assign the entries in the first column of {{iana-algs}} to 
        H_2 = { 32 69 75 a3 3a ff ae ac af a8 fb d1 bd 62 66 95 }
          M = { 59 48 44 80 b6 cd 59 06 69 27 5e 7d 81 4a d1 74 }
          L = { a0 00 00 00 00 00 00 00 90 00 00 00 00 00 00 00 }
-  full-tag = { c4 a1 ca 9a 38 c6 73 af bf 9c 73 49 bf 3c d5 4d }
+  full_tag = { c4 a1 ca 9a 38 c6 73 af bf 9c 73 49 bf 3c d5 4d }
        tag = { c4 a1 ca 9a 38 c6 73 af bf 9c 73 49 bf 3c }
         ct = { b5 c2 a4 07 f3 3e 99 88 de c1 2f 10 64 7b 3d 4f
                eb 8f f7 cc }
@@ -963,137 +1074,29 @@ IANA is requested to assign the entries in the first column of {{iana-algs}} to 
 
 # Compatibility with 3GPP Algorithms
 
-The integrity part of GCM-SST was originally developed by ETSI SAGE under the name Mac5G, following a request from 3GPP. Its design evolved over several years of discussion and refinement {{SAGE23}}{{SAGE24}}. Mac5G shares structural similarities with the integrity algorithms used for SNOW 3G {{UIA2}} and ZUC {{EIA3}}.
+The integrity part of GCM-SST was originally developed by ETSI SAGE, under the name Mac5G, following a request from 3GPP. Mac5G follows the same structural approach as the integrity algorithms used for SNOW 3G {{UIA2}} and ZUC {{EIA3}}.
 
-3GPP has decided to standardize GCM-SST for use with SNOW 5G {{SNOW}}, AES-256 {{AES}}, and ZUC-256 {{ZUC}} in 3GPP TS 35.240–35.248 {{WID24}}. These AEAD algorithms are designated as NCA4, NCA5, and NCA6, respectively. GCM-SST, as specified in this document, is fully compatible with the SNOW 5G-based NCA4 and the ZUC-256-based NCA6. The AES-based NCA5 differs only in its subkey generation but is otherwise identical. SNOW 5G is functionally equivalent to SNOW-Vi {{SNOW}}, except that its FSM adders have been changed from 32-bit to 16-bit. Additionally, the NCA algorithms introduce more detailed specifications for nonce construction based on 3GPP protocols.
+3GPP has standardized GCM-SST for use with SNOW 5G {{NCA4}}, AES-256 {{NCA5}}, and ZUC-256 {{NCA6}} in 3GPP TS 35.240–35.248. These AEAD algorithms are designated as NCA4, NCA5, and NCA6, respectively. GCM-SST, as specified in this document, is fully compatible with the SNOW 5G-based NCA4 and the ZUC-256-based NCA6. The AES-based NCA5 differs only in its subkey generation but is otherwise identical. The NCA algorithms support bit-aligned associated data and plaintext inputs, whereas this specification is restricted to byte-aligned inputs. They also provide more detailed specifications for nonce construction based on 3GPP protocol requirements. SNOW 5G is functionally equivalent to SNOW-Vi {{SNOW-Vi}}, except that the finite-state machine (FSM) adders have been changed from 32-bit to 16-bit operations to increase the complexity of correlation attacks while also improving implementation efficiency {{SNOW-Axn}}.
 
-The version of GCM-SST specified in this document imposes stricter security considerations and constraints than the ETSI SAGE specifications for the NCA algorithms. We recommend 3GPP to follow the additional security measures outlined in this document.
+The version of GCM-SST specified in this document imposes stricter security considerations and constraints than the ETSI SAGE specifications for the NCA algorithms. This document recommends that 3GPP adopt the additional security measures described herein.
 
 # Change Log
 {:removeInRFC="true" numbered="false"}
 
 Changes from -18 to -19:
 
-* Editorial changes
-
-Changes from -17 to -18:
-
-* Improved explanation why replay protection is required and random nonces forbidden.
-* New appendix discussing compatibility with 3GPP algorithms.
-* Editorial changes
-
-Changes from -16 to -17:
-
-* Align with ANSSI requirement on the maximum number of plaintext blocks.
-* Added information of how small fraction of a bit an attacker can theoretically recover.
-* Editorial changes
-
-Changes from -15 to -16:
-
-* Added section on multicast or broadcast allowing use in one-to-many scenarios. GCM-SST provides good security in such scenarios.
-* Renamed Q to H<sub>2</sub> and some q to σ to avoid using the same symbol for different things.
-* Updated information on confidentiality against passive attackers including comparison and links to papers showing that plaintext-recovery have similar complexity as distinguishing attacks.
-* Editorial changes
-
-Changes from -14 to -15:
-
-* Added 48-bit tags after feedback from media people.
-* Added comparison to AEGIS in pure hardware based on Scott Fluhrer's analysis
-* Changed "acceptable level" to "minimum threshold" as it can be discussed if 64-bit security is acceptable.
-* Added requirement that security protocols using AES-GCM-SST MUST enforce limits to ensure that δ ≈ 1.
-* Added that this specification does not allow use in multicast or broadcast. This simplify security considerations.
-* Editorial changes
-
-Changes from -13 to -14:
-
-* Explained the formatting of L as well as why replay protection after decryption may be used.
-* Updated link to NIST's plans to standardize Rijndael-256 and aligned the name with NIST
-* Aligned test vector tag length and terminology with the rest of the specification
-* Editorial changes
-
-Changes from -12 to -13:
-
-* Changed name to Strong Secure Tags to better illustrate that GCM-SST is intended to improve security for all tag lengths.
-* Editorial changes
-
-Changes from -11 to -12:
-
-* Introduced Q_MAX and V_MAX as formal names for the invocation constraints.
-* Described that masking is important to mitigate weak keys.
-* Improved and expanded the section comparing GCM-SST with Poly1305 and GCM.
-* Editorial changes including subsections in the security considerations.
-
-Changes from -10 to -11:
-
-* Added that protocols can impose stricter limits on P_MAX and A_MAX
-* Added constraints on the number of decryption queries v
-* More info on replay protection implementation
-* More info on nonce constructions
-* Introduced the Bernstein bound factor δ instead of just assuming that δ < 2
-* Clarified differences between GCM-SST with different keystream generators (ideal, AES, Rijndael)
-* Made it clearer that Table 1 is for unicast security protocols with replay protection and that Poly1305 is keyed with ChaCha20.
-* Editorial changes including RFC 2119 terminology
-
-Changes from -09 to -10:
-
-* Corrected some probabilities that were off by a factor 2
-* Editorial changes.
-
-Changes from -07 to -09:
-
-* Changed replay requirements to allow replay protection after decryption to align with protocols like QUIC and DTLS 1.3.
-* Added a comparison between GCM_SST_14, GCM_SST_12, GCM_16, POLY1305 in protocols like QUIC
-* Added text on the importance of behaving like an ideal MAC
-* Consideration on replay protection mechanisms
-* Added text and alternative implementations borrowed from NIST
-* Added constraints of 2^32 encryption invocations aligning with NIST
-* Added text explaining that GCM-SST offer strictly better security than GCM and that "GCM allows universal forgery with lower complexity than GCM-SST, even when nonces are not reused", to avoid any misconceptions that Lindell's attack makes GCM-SST weaker than GCM in any way.
-
-Changes from -06 to -07:
-
-* Replaced 80-bit tags with 96- and 112-bit tags.
-* Changed P_MAX and A_MAX and made them tag_length dependent to enable 96- and 112-bit tags with near-ideal security.
-* Clarified that GCM-SST tags have near-ideal forgery probabilities, even against multiple forgery attacks, which is not the case at all for GCM.
-* Added formulas for expected number of forgeries for GCM-SST (q ⋅ 2<sup>-tag_length</sup>) and GCM (q<sup>2</sup> ⋅ (n + m + 1) ⋅ 2<sup>-tag_length + 1</sup>) and stated that GCM-SST fulfils BSI recommendation of using 96-bit ideal MACs.
-
-Changes from -04 to -06:
-
-* Reference to Inoue et al. for security proof, forgery probability graph, and improved attack when GCM-SST is used without replay protection.
-* Editorial changes.
-
-Changes from -03 to -04:
-
-* Added that GCM-SST is designed for unicast protocol with replay protection
-* Update info on use cases for short tags
-* Updated info on ETSI and 3GPP standardization of GCM-SST
-* Added Rijndael-256-256
-* Added that replay is required and that random nonces, multicast, and broadcast are forbidden based on attack from Yehuda Lindell
-* Security considerations for active attacks on privacy as suggested by Thomas Bellebaum
-* Improved text on H and Q being zero.
-* Editorial changes.
-
-Changes from -02 to -03:
-
-* Added performance information and considerations.
-* Editorial changes.
-
-Changes from -01 to -02:
-
-* The length encoding chunk is now called L
-* Use of the notation POLYVAL(H, X_1, X_2, ...) from RFC 8452
-* Removed duplicated text in security considerations.
-
-Changes from -00 to -01:
-
-* Link to NIST decision to remove support for GCM with tags shorter than 96-bits based on Mattsson et al.
-* Mention that 3GPP 5G Advance will use GCM-SST with AES-256 and SNOW 5G.
-* Corrected reference to step numbers during decryption
-* Changed T to full_tag to align with tag and expected_tag
-* Link to images from the NIST encryption workshop illustrating the GCM-SST encryption and decryption functions.
-* Updated definitions
-* Editorial changes.
+* 3GPP standardization status updated from prospective to completed, now citing final TS 35.240–35.248 specifications instead of WIDs and Liaison Statements.
+* Added a more complete description of 3GPP NCA4, NCA5, NCA6.
+* New citation to Naito et al. for a tighter single-key bound and a proof of the multi-key bound, and a more complete description of Inoue et al.'s single-key security results.
+* Significantly revised usage limits (P_MAX, A_MAX, Q_MAX, V_MAX) with clearer motivation for P_MAX and the δ ≈ 1 condition.
+* Restructured decryption steps so that replay-protection failure is an explicit abort step, and added a requirement to zeroize intermediate values on tag or replay failure.
+* Added zero-trust key compromise rekeying considerations.
+* Added nonce-misuse resilience discussion.
+* Added a more complete description of technical changes compared to NIST SP 800-38D (stricter usage limits, fixed-length deterministic nonces).
+* Corrected the GCM formulas: E(F) ⪅ δ ⋅ v<sup>2</sup> ⋅ l / 2<sup>t+1</sup> is a bound; other formulas assume δ ≈ 1 as well as deterministic 96-bit nonces.
+* Substantial editorial changes including terminology cleanup (tag_length -> t, octet string -> byte string).
 
 # Acknowledgments
 {:numbered="false"}
 
-The authors thank {{{Richard Barnes}}}, {{{Thomas Bellebaum}}}, {{{Patrik Ekdahl}}}, {{{Scott Fluhrer}}}, {{{Eric Lagergren}}}, {{{Yehuda Lindell}}}, {{{Kazuhiko Minematsu}}}, {{{Santeri Paavolainen}}}, {{{Sini Ruohomaa}}}, {{{Erik Thormarker}}}, and {{{Magnus Westerlund}}} for their valuable comments and feedback. Some of the formatting and text were inspired by and borrowed from {{I-D.irtf-cfrg-aegis-aead}}.
+The authors thank {{{Richard Barnes}}}, {{{Thomas Bellebaum}}}, {{{Patrik Ekdahl}}}, {{{Scott Fluhrer}}}, {{{Russ Housley}}}, {{{Eric Lagergren}}}, {{{Yehuda Lindell}}}, {{{Kazuhiko Minematsu}}}, {{{Santeri Paavolainen}}}, {{{Sini Ruohomaa}}}, {{{Erik Thormarker}}}, and {{{Magnus Westerlund}}} for their valuable comments and feedback. Some of the formatting and text follow the conventions of {{I-D.irtf-cfrg-aegis-aead}}.
