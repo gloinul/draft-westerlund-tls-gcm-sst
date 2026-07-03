@@ -142,12 +142,10 @@ For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte inp
 The mask is computed as follows:
 
 ~~~
-mask = Stream(40, sn_key, ZeroPad(ciphertext[0..15], 28))
+mask = Stream(48, sn_key, ZeroPad(ciphertext[0..15], 28))
 ~~~
 
-Where Stream(n, K, N) denotes the first n bytes of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.
-
-The first 16 bits of the mask are used to encrypt the sequence number, following the procedure in {{!RFC9147, Section 4.2.3}}.
+Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes. The 48-bit mask encrypts the full sequence number, following the procedure in {{!RFC9147, Section 4.2.3}}.
 
 # QUIC Header Protection
 
@@ -181,7 +179,7 @@ The 5-byte mask is computed as follows:
 mask = Stream(40, hp_key, ZeroPad(sample, 28))[0..4]
 ~~~
 
-Where Stream(n, K, N) denotes the first n bytes of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.
+Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.
 
 # Key Update and Usage Limits
 
