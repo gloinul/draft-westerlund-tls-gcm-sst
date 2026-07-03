@@ -1384,10 +1384,10 @@ mask = AES-ECB(sn_key, ciphertext[0..15])
 <p id="section-5.2-3">The mask is computed as follows:<a href="#section-5.2-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-5.2-4">
 <pre>
-mask = Stream(48, sn_key, ZeroPad(ciphertext[0..15], 28))
+mask = Stream(16, sn_key, ZeroPad(ciphertext[0..15], 28))
 </pre><a href="#section-5.2-4" class="pilcrow">¶</a>
 </div>
-<p id="section-5.2-5">Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes. The 48-bit mask encrypts the full sequence number, following the procedure in <span>[<a href="#RFC9147" class="cite xref">RFC9147</a>], <a href="https://rfc-editor.org/rfc/rfc9147#section-4.2.3" class="relref">Section 4.2.3</a></span>.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
+<p id="section-5.2-5">Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes. The first 16 bits of the mask are used to encrypt the sequence number in the record header, following the procedure in <span>[<a href="#RFC9147" class="cite xref">RFC9147</a>], <a href="https://rfc-editor.org/rfc/rfc9147#section-4.2.3" class="relref">Section 4.2.3</a></span>.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
