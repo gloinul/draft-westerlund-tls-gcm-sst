@@ -4,16 +4,16 @@
 
 This is the working area for the individual Internet-Draft, "Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS, DTLS and QUIC".
 
-* [Editor's Copy](https://gloinul.github.io/draft-westerlund-tls-gsm-sst/#go.draft-westerlund-tls-gsm-sst.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-westerlund-tls-gsm-sst)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-westerlund-tls-gsm-sst)
-* [Compare Editor's Copy to Individual Draft](https://gloinul.github.io/draft-westerlund-tls-gsm-sst/#go.draft-westerlund-tls-gsm-sst.diff)
+* [Editor's Copy](https://gloinul.github.io/draft-westerlund-tls-gcm-sst/#go.draft-westerlund-tls-gcm-sst.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-westerlund-tls-gcm-sst)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-westerlund-tls-gcm-sst)
+* [Compare Editor's Copy to Individual Draft](https://gloinul.github.io/draft-westerlund-tls-gcm-sst/#go.draft-westerlund-tls-gcm-sst.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/gloinul/draft-westerlund-tls-gsm-sst/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/gloinul/draft-westerlund-tls-gcm-sst/blob/main/CONTRIBUTING.md).
 
 The contributing file also has tips on how to make contributions, if you
 don't already know how to do that.
