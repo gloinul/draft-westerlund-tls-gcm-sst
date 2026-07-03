@@ -183,13 +183,13 @@ mask = Rijndael-256-ECB(hp_key, sample)[0..4]
 
 A key update MUST be performed prior to reaching the usage limits specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}. The key update mechanism is documented in {{!RFC8446, Section 4.6.3}}.
 
-For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. Protocols utilizing AES-GCM-SST MUST ensure that (P_MAX + A_MAX) * (Q_MAX + V_MAX) does not exceed approximately 2^66, as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}.
+For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. To ensure that the Bernstein bound factor satisfies delta approximately 1, protocols utilizing AES-GCM-SST MUST enforce that Q_MAX multiplied by P_MAX / 16 does not exceed approximately 2^59, as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}.
 
-In TLS 1.3 and QUIC, where record/packet payloads are limited to approximately 2^14 bytes, a key update MUST be performed before encrypting 2^32 records with the same key for AES-GCM-SST cipher suites.
+In TLS 1.3 and QUIC, where record/packet payloads are limited to approximately 2^14 bytes, the general constraint permits up to approximately 2^49 records per key for AES-GCM-SST cipher suites. Implementations MAY choose a more conservative limit. The maximum number of failed decryption attempts (V_MAX) for AES-GCM-SST is 2^54.
 
-For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher (Q_MAX = V_MAX = 2^88), and a key update MUST be performed before encrypting 2^88 records with the same key.
+For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher. A key update MUST be performed before encrypting 2^64 records with the same key (Q_MAX = 2^64). The maximum number of failed decryption attempts (V_MAX) for Rijndael-GCM-SST is 2^118.
 
-The number of failed decryption attempts (forgery attempts) before a key update or connection termination SHOULD be limited.
+The number of failed decryption attempts (forgery attempts) before a key update or connection termination SHOULD be limited to V_MAX as specified above.
 
 # Operational Considerations
 
