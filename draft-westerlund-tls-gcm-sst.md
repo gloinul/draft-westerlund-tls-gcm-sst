@@ -134,16 +134,18 @@ This is the same mechanism used for AES-GCM and AES-CCM cipher suites in DTLS 1.
 
 ## Rijndael-GCM-SST Cipher Suites
 
-For Rijndael-GCM-SST cipher suites, the mask is generated using Rijndael-256-ECB with:
+For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte input, which may exceed the available ciphertext in short DTLS records. Instead, the mask is generated using the Rijndael-GCM-SST keystream generator with:
 
 - `sn_key`: the sequence number encryption key as defined in {{!RFC9147, Section 4.2.3}}
-- `ciphertext[0..31]`: the first 32 bytes of the DTLS ciphertext
+- `ciphertext[0..15]`: the first 16 bytes of the DTLS ciphertext
 
 The mask is computed as follows:
 
 ~~~
-mask = Rijndael-256-ECB(sn_key, ciphertext[0..31])
+mask = Stream(40, sn_key, ZeroPad(ciphertext[0..15], 28))
 ~~~
+
+Where Stream(n, K, N) denotes the first n bytes of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.
 
 The first 16 bits of the mask are used to encrypt the sequence number, following the procedure in {{!RFC9147, Section 4.2.3}}.
 
@@ -168,16 +170,18 @@ This is the same mechanism used for AES-GCM cipher suites in QUIC, as specified 
 
 ## Rijndael-GCM-SST Cipher Suites
 
-For Rijndael-GCM-SST cipher suites, the header protection mask is generated using Rijndael-256-ECB with:
+For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte sample, which may exceed the available ciphertext in short QUIC packets. Instead, the mask is generated using the Rijndael-GCM-SST keystream generator with:
 
 - `hp_key`: the header protection key as defined in {{!RFC9001, Section 5.4.3}}
-- `sample`: a 32-byte sample from the packet payload ciphertext
+- `sample`: a 16-byte sample from the packet payload ciphertext
 
 The 5-byte mask is computed as follows:
 
 ~~~
-mask = Rijndael-256-ECB(hp_key, sample)[0..4]
+mask = Stream(40, hp_key, ZeroPad(sample, 28))[0..4]
 ~~~
+
+Where Stream(n, K, N) denotes the first n bytes of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.
 
 # Key Update and Usage Limits
 
