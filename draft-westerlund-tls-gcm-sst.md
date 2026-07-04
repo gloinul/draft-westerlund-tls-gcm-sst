@@ -189,7 +189,7 @@ For AES-GCM-SST, the confidentiality and integrity limits depend on the specific
 
 In TLS 1.3 and DTLS 1.3, where record payloads are limited to 2^14 bytes, the general constraint permits up to approximately 2^49 records per key for AES-GCM-SST cipher suites. In QUIC, where packet payloads can be up to 2^16 bytes, the constraint permits up to approximately 2^47 packets per key. Implementations MAY choose more conservative limits. The maximum number of failed decryption attempts (V_MAX) for AES-GCM-SST is 2^54.
 
-For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher. A key update MUST be performed before encrypting 2^64 records with the same key due to TLS protocol limitations (Q_MAX = 2^64). The maximum number of failed decryption attempts (V_MAX) for Rijndael-GCM-SST is 2^118.
+For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher. A key update MUST be performed before encrypting 2^64 records with the same key (Q_MAX = 2^64 as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}). The maximum number of failed decryption attempts (V_MAX) for Rijndael-GCM-SST is 2^118.
 
 The number of failed decryption attempts (forgery attempts) before a key update or connection termination SHOULD be limited to V_MAX as specified above.
 
@@ -202,6 +202,8 @@ Rijndael-GCM-SST cipher suites offer significantly higher usage limits and stron
 On devices lacking hardware AES acceleration, cipher suites dependent on the AES round function SHOULD NOT be prioritized.
 
 On devices equipped with hardware AES acceleration, GCM-SST cipher suites provide performance comparable to standard AES-GCM cipher suites while offering improved integrity guarantees for a given tag length.
+
+To align with zero-trust principles and minimize the impact of key compromise, implementations SHOULD enforce rekeying well before reaching the cryptographic limits. Rekeying via ephemeral key exchange providing Forward Secrecy (FS) and Post-Compromise Security (PCS) after 1 hour or 2^30 to 2^37 bytes of data is RECOMMENDED.
 
 # Security Considerations
 
