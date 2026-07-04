@@ -5,7 +5,7 @@
 Transport Layer Security                                   M. Westerlund
 Internet-Draft                                         J. Preuß Mattsson
 Intended status: Standards Track                                Ericsson
-Expires: 4 January 2027                                      3 July 2026
+Expires: 5 January 2027                                      4 July 2026
 
 
   Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS,
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2027.
+   This Internet-Draft will expire on 5 January 2027.
 
 Copyright Notice
 
@@ -314,9 +314,9 @@ Table of Contents
 
    For Rijndael-GCM-SST cipher suites, the usage limits are
    significantly higher.  A key update MUST be performed before
-   encrypting 2^64 records with the same key due to TLS protocol
-   limitations (Q_MAX = 2^64).  The maximum number of failed decryption
-   attempts (V_MAX) for Rijndael-GCM-SST is 2^118.
+   encrypting 2^64 records with the same key (Q_MAX = 2^64 as specified
+   in [I-D.draft-mattsson-cfrg-aes-gcm-sst]).  The maximum number of
+   failed decryption attempts (V_MAX) for Rijndael-GCM-SST is 2^118.
 
    The number of failed decryption attempts (forgery attempts) before a
    key update or connection termination SHOULD be limited to V_MAX as
@@ -340,6 +340,12 @@ Table of Contents
    suites provide performance comparable to standard AES-GCM cipher
    suites while offering improved integrity guarantees for a given tag
    length.
+
+   To align with zero-trust principles and minimize the impact of key
+   compromise, implementations SHOULD enforce rekeying well before
+   reaching the cryptographic limits.  Rekeying via ephemeral key
+   exchange providing Forward Secrecy (FS) and Post-Compromise Security
+   (PCS) after 1 hour or 2^30 to 2^37 bytes of data is RECOMMENDED.
 
 9.  Security Considerations
 
@@ -394,8 +400,8 @@ Table of Contents
               Campagna, M., Maximov, A., and J. P. Mattsson, "Galois
               Counter Mode with Strong Secure Tags (GCM-SST)", Work in
               Progress, Internet-Draft, draft-mattsson-cfrg-aes-gcm-sst-
-              19, 2 July 2026, <https://datatracker.ietf.org/doc/html/
-              draft-mattsson-cfrg-aes-gcm-sst-19>.
+              20, 4 July 2026, <https://datatracker.ietf.org/doc/html/
+              draft-mattsson-cfrg-aes-gcm-sst-20>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
