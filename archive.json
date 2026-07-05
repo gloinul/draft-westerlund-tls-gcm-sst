@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-02T03:38:53.864774+00:00",
+  "timestamp": "2026-07-05T03:28:25.790754+00:00",
   "repo": "gloinul/draft-westerlund-tls-gcm-sst",
   "labels": [
     {
@@ -89,7 +89,58 @@
       "updatedAt": "2026-06-17T12:22:57Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOSVqNcc8AAAABHki_mA",
+      "title": "Editor's Copy link returns 404 error",
+      "url": "https://github.com/gloinul/draft-westerlund-tls-gcm-sst/issues/3",
+      "state": "CLOSED",
+      "author": "emanjon",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-07-03T11:26:45Z",
+      "updatedAt": "2026-07-03T14:24:20Z",
+      "closedAt": "2026-07-03T14:24:19Z",
+      "comments": [
+        {
+          "author": "gloinul",
+          "authorAssociation": "OWNER",
+          "body": "Fixed",
+          "createdAt": "2026-07-03T14:24:19Z",
+          "updatedAt": "2026-07-03T14:24:19Z"
+        }
+      ]
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 4,
+      "id": "PR_kwDOSVqNcc7toJeG",
+      "title": "Addressing updates in GCM-SST and Header protection",
+      "url": "https://github.com/gloinul/draft-westerlund-tls-gcm-sst/pull/4",
+      "state": "OPEN",
+      "author": "gloinul",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #1 ",
+      "createdAt": "2026-07-03T14:36:03Z",
+      "updatedAt": "2026-07-04T14:50:12Z",
+      "baseRepository": "gloinul/draft-westerlund-tls-gcm-sst",
+      "baseRefName": "main",
+      "baseRefOid": "0ecc309eefa8ce83435f4e06fdb8b28c184d6194",
+      "headRepository": "gloinul/draft-westerlund-tls-gcm-sst",
+      "headRefName": "review-00",
+      "headRefOid": "4fe508e4c3a0cbc7f0f1e01caa67029acd02a6c5",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
