@@ -134,18 +134,18 @@ This is the same mechanism used for AES-GCM and AES-CCM cipher suites in DTLS 1.
 
 ## Rijndael-GCM-SST Cipher Suites
 
-For Rijndael-GCM-SST cipher suites, the mask is generated using Rijndael-256-ECB with:
+For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte input, which may exceed the available ciphertext in short DTLS records. Instead, the mask is generated using the Rijndael-GCM-SST keystream generator with:
 
 - `sn_key`: the sequence number encryption key as defined in {{!RFC9147, Section 4.2.3}}
-- `ciphertext[0..31]`: the first 32 bytes of the DTLS ciphertext
+- `ciphertext[0..15]`: the first 16 bytes of the DTLS ciphertext
 
 The mask is computed as follows:
 
 ~~~
-mask = Rijndael-256-ECB(sn_key, ciphertext[0..31])
+mask = Stream(16, sn_key, ZeroPad(ciphertext[0..15], 28))
 ~~~
 
-The first 16 bits of the mask are used to encrypt the sequence number, following the procedure in {{!RFC9147, Section 4.2.3}}.
+Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes. The first 16 bits of the mask are used to encrypt the sequence number in the record header, following the procedure in {{!RFC9147, Section 4.2.3}}.
 
 # QUIC Header Protection
 
@@ -168,28 +168,30 @@ This is the same mechanism used for AES-GCM cipher suites in QUIC, as specified 
 
 ## Rijndael-GCM-SST Cipher Suites
 
-For Rijndael-GCM-SST cipher suites, the header protection mask is generated using Rijndael-256-ECB with:
+For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte sample, which may exceed the available ciphertext in short QUIC packets. Instead, the mask is generated using the Rijndael-GCM-SST keystream generator with:
 
 - `hp_key`: the header protection key as defined in {{!RFC9001, Section 5.4.3}}
-- `sample`: a 32-byte sample from the packet payload ciphertext
+- `sample`: a 16-byte sample from the packet payload ciphertext
 
 The 5-byte mask is computed as follows:
 
 ~~~
-mask = Rijndael-256-ECB(hp_key, sample)[0..4]
+mask = Stream(40, hp_key, ZeroPad(sample, 28))[0..4]
 ~~~
+
+Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.
 
 # Key Update and Usage Limits
 
 A key update MUST be performed prior to reaching the usage limits specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}. The key update mechanism is documented in {{!RFC8446, Section 4.6.3}}.
 
-For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. Protocols utilizing AES-GCM-SST MUST ensure that P_MAX * E_MAX is significantly less than approximately 2^68, as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}.
+For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. To ensure that the Bernstein bound factor satisfies delta approximately 1, protocols utilizing AES-GCM-SST MUST enforce that Q_MAX multiplied by P_MAX / 16 does not exceed approximately 2^59, as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}.
 
-In TLS 1.3 and QUIC, where record/packet payloads are limited to approximately 2^14 bytes, a key update MUST be performed before encrypting 2^32 records with the same key for AES-GCM-SST cipher suites.
+In TLS 1.3 and DTLS 1.3, where record payloads are limited to 2^14 bytes, the general constraint permits up to approximately 2^49 records per key for AES-GCM-SST cipher suites. In QUIC, where packet payloads can be up to 2^16 bytes, the constraint permits up to approximately 2^47 packets per key. Implementations MAY choose more conservative limits. The maximum number of failed decryption attempts (V_MAX) for AES-GCM-SST is 2^54.
 
-For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher, and a key update MUST be performed before encrypting 2^64 records with the same key.
+For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher. A key update MUST be performed before encrypting 2^64 records with the same key (Q_MAX = 2^64 as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}). The maximum number of failed decryption attempts (V_MAX) for Rijndael-GCM-SST is 2^118.
 
-The number of failed decryption attempts (forgery attempts) before a key update or connection termination SHOULD be limited.
+The number of failed decryption attempts (forgery attempts) before a key update or connection termination SHOULD be limited to V_MAX as specified above.
 
 # Operational Considerations
 
@@ -200,6 +202,8 @@ Rijndael-GCM-SST cipher suites offer significantly higher usage limits and stron
 On devices lacking hardware AES acceleration, cipher suites dependent on the AES round function SHOULD NOT be prioritized.
 
 On devices equipped with hardware AES acceleration, GCM-SST cipher suites provide performance comparable to standard AES-GCM cipher suites while offering improved integrity guarantees for a given tag length.
+
+To align with zero-trust principles and minimize the impact of key compromise, implementations SHOULD enforce rekeying well before reaching the cryptographic limits. Rekeying via ephemeral key exchange providing Forward Secrecy (FS) and Post-Compromise Security (PCS) after 1 hour or 2^30 to 2^37 bytes of data is RECOMMENDED.
 
 # Security Considerations
 
