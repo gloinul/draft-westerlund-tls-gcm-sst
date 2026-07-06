@@ -5,7 +5,7 @@
 Transport Layer Security                                   M. Westerlund
 Internet-Draft                                         J. Preuß Mattsson
 Intended status: Standards Track                                Ericsson
-Expires: 4 January 2027                                      3 July 2026
+Expires: 7 January 2027                                      6 July 2026
 
 
   Use of Galois Counter Mode with Strong Secure Tags (GCM-SST) in TLS,
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2027.
+   This Internet-Draft will expire on 7 January 2027.
 
 Copyright Notice
 
@@ -283,9 +283,8 @@ Table of Contents
 
    For AES-GCM-SST, the confidentiality and integrity limits depend on
    the specific AEAD instance.  Protocols utilizing AES-GCM-SST MUST
-   ensure that (P_MAX + A_MAX) * (Q_MAX + V_MAX) does not exceed
-   approximately 2^66, as specified in
-   [I-D.draft-mattsson-cfrg-aes-gcm-sst].
+   ensure that P_MAX * E_MAX is significantly less than approximately
+   2^68, as specified in [I-D.draft-mattsson-cfrg-aes-gcm-sst].
 
    In TLS 1.3 and QUIC, where record/packet payloads are limited to
    approximately 2^14 bytes, a key update MUST be performed before
@@ -293,8 +292,8 @@ Table of Contents
    suites.
 
    For Rijndael-GCM-SST cipher suites, the usage limits are
-   significantly higher (Q_MAX = V_MAX = 2^88), and a key update MUST be
-   performed before encrypting 2^88 records with the same key.
+   significantly higher, and a key update MUST be performed before
+   encrypting 2^64 records with the same key.
 
    The number of failed decryption attempts (forgery attempts) before a
    key update or connection termination SHOULD be limited.
@@ -371,8 +370,8 @@ Table of Contents
               Campagna, M., Maximov, A., and J. P. Mattsson, "Galois
               Counter Mode with Strong Secure Tags (GCM-SST)", Work in
               Progress, Internet-Draft, draft-mattsson-cfrg-aes-gcm-sst-
-              19, 2 July 2026, <https://datatracker.ietf.org/doc/html/
-              draft-mattsson-cfrg-aes-gcm-sst-19>.
+              21, 5 July 2026, <https://datatracker.ietf.org/doc/html/
+              draft-mattsson-cfrg-aes-gcm-sst-21>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
