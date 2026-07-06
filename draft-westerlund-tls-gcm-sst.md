@@ -183,11 +183,11 @@ mask = Rijndael-256-ECB(hp_key, sample)[0..4]
 
 A key update MUST be performed prior to reaching the usage limits specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}. The key update mechanism is documented in {{!RFC8446, Section 4.6.3}}.
 
-For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. Protocols utilizing AES-GCM-SST MUST ensure that (P_MAX + A_MAX) * (Q_MAX + V_MAX) does not exceed approximately 2^66, as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}.
+For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. Protocols utilizing AES-GCM-SST MUST ensure that P_MAX * E_MAX is significantly less than approximately 2^68, as specified in {{I-D.draft-mattsson-cfrg-aes-gcm-sst}}.
 
 In TLS 1.3 and QUIC, where record/packet payloads are limited to approximately 2^14 bytes, a key update MUST be performed before encrypting 2^32 records with the same key for AES-GCM-SST cipher suites.
 
-For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher (Q_MAX = V_MAX = 2^88), and a key update MUST be performed before encrypting 2^88 records with the same key.
+For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher, and a key update MUST be performed before encrypting 2^64 records with the same key.
 
 The number of failed decryption attempts (forgery attempts) before a key update or connection termination SHOULD be limited.
 
