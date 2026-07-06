@@ -1372,22 +1372,22 @@ mask = AES-ECB(sn_key, ciphertext[0..15])
         <h3 id="name-rijndael-gcm-sst-cipher-sui">
 <a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-rijndael-gcm-sst-cipher-sui" class="section-name selfRef">Rijndael-GCM-SST Cipher Suites</a>
         </h3>
-<p id="section-5.2-1">For Rijndael-GCM-SST cipher suites, the mask is generated using Rijndael-256-ECB with:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.2-1">For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte input, which may exceed the available ciphertext in short DTLS records. Instead, the mask is generated using the Rijndael-GCM-SST keystream generator with:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.2-2.1">
             <p id="section-5.2-2.1.1"><code>sn_key</code>: the sequence number encryption key as defined in <span>[<a href="#RFC9147" class="cite xref">RFC9147</a>], <a href="https://rfc-editor.org/rfc/rfc9147#section-4.2.3" class="relref">Section 4.2.3</a></span><a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.2-2.2">
-            <p id="section-5.2-2.2.1"><code>ciphertext[0..31]</code>: the first 32 bytes of the DTLS ciphertext<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.2.1"><code>ciphertext[0..15]</code>: the first 16 bytes of the DTLS ciphertext<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-5.2-3">The mask is computed as follows:<a href="#section-5.2-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-5.2-4">
 <pre>
-mask = Rijndael-256-ECB(sn_key, ciphertext[0..31])
+mask = Stream(16, sn_key, ZeroPad(ciphertext[0..15], 28))
 </pre><a href="#section-5.2-4" class="pilcrow">¶</a>
 </div>
-<p id="section-5.2-5">The first 16 bits of the mask are used to encrypt the sequence number, following the procedure in <span>[<a href="#RFC9147" class="cite xref">RFC9147</a>], <a href="https://rfc-editor.org/rfc/rfc9147#section-4.2.3" class="relref">Section 4.2.3</a></span>.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
+<p id="section-5.2-5">Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes. The first 16 bits of the mask are used to encrypt the sequence number in the record header, following the procedure in <span>[<a href="#RFC9147" class="cite xref">RFC9147</a>], <a href="https://rfc-editor.org/rfc/rfc9147#section-4.2.3" class="relref">Section 4.2.3</a></span>.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1426,21 +1426,22 @@ mask = AES-ECB(hp_key, sample)[0..4]
         <h3 id="name-rijndael-gcm-sst-cipher-suit">
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-rijndael-gcm-sst-cipher-suit" class="section-name selfRef">Rijndael-GCM-SST Cipher Suites</a>
         </h3>
-<p id="section-6.2-1">For Rijndael-GCM-SST cipher suites, the header protection mask is generated using Rijndael-256-ECB with:<a href="#section-6.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.2-1">For Rijndael-GCM-SST cipher suites, Rijndael-256-ECB would require a 32-byte sample, which may exceed the available ciphertext in short QUIC packets. Instead, the mask is generated using the Rijndael-GCM-SST keystream generator with:<a href="#section-6.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-6.2-2.1">
             <p id="section-6.2-2.1.1"><code>hp_key</code>: the header protection key as defined in <span>[<a href="#RFC9001" class="cite xref">RFC9001</a>], <a href="https://rfc-editor.org/rfc/rfc9001#section-5.4.3" class="relref">Section 5.4.3</a></span><a href="#section-6.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-6.2-2.2">
-            <p id="section-6.2-2.2.1"><code>sample</code>: a 32-byte sample from the packet payload ciphertext<a href="#section-6.2-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-6.2-2.2.1"><code>sample</code>: a 16-byte sample from the packet payload ciphertext<a href="#section-6.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-6.2-3">The 5-byte mask is computed as follows:<a href="#section-6.2-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-6.2-4">
 <pre>
-mask = Rijndael-256-ECB(hp_key, sample)[0..4]
+mask = Stream(40, hp_key, ZeroPad(sample, 28))[0..4]
 </pre><a href="#section-6.2-4" class="pilcrow">¶</a>
 </div>
+<p id="section-6.2-5">Where Stream(n, K, N) denotes the first n bits of keystream produced by the Rijndael-GCM-SST keystream generator instantiated with key K and nonce N (i.e., Rijndael-256 in counter mode as defined in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>), and ZeroPad(x, len) right-pads the byte string x with zeros to a length of len bytes.<a href="#section-6.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1451,10 +1452,10 @@ mask = Rijndael-256-ECB(hp_key, sample)[0..4]
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-key-update-and-usage-limits" class="section-name selfRef">Key Update and Usage Limits</a>
       </h2>
 <p id="section-7-1">A key update <span class="bcp14">MUST</span> be performed prior to reaching the usage limits specified in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>. The key update mechanism is documented in <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>], <a href="https://rfc-editor.org/rfc/rfc8446#section-4.6.3" class="relref">Section 4.6.3</a></span>.<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2">For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. Protocols utilizing AES-GCM-SST <span class="bcp14">MUST</span> ensure that P_MAX * E_MAX is significantly less than approximately 2^68, as specified in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>.<a href="#section-7-2" class="pilcrow">¶</a></p>
-<p id="section-7-3">In TLS 1.3 and QUIC, where record/packet payloads are limited to approximately 2^14 bytes, a key update <span class="bcp14">MUST</span> be performed before encrypting 2^32 records with the same key for AES-GCM-SST cipher suites.<a href="#section-7-3" class="pilcrow">¶</a></p>
-<p id="section-7-4">For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher, and a key update <span class="bcp14">MUST</span> be performed before encrypting 2^64 records with the same key.<a href="#section-7-4" class="pilcrow">¶</a></p>
-<p id="section-7-5">The number of failed decryption attempts (forgery attempts) before a key update or connection termination <span class="bcp14">SHOULD</span> be limited.<a href="#section-7-5" class="pilcrow">¶</a></p>
+<p id="section-7-2">For AES-GCM-SST, the confidentiality and integrity limits depend on the specific AEAD instance. To ensure that the Bernstein bound factor satisfies delta approximately 1, protocols utilizing AES-GCM-SST <span class="bcp14">MUST</span> enforce that Q_MAX multiplied by P_MAX / 16 does not exceed approximately 2^59, as specified in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3">In TLS 1.3 and DTLS 1.3, where record payloads are limited to 2^14 bytes, the general constraint permits up to approximately 2^49 records per key for AES-GCM-SST cipher suites. In QUIC, where packet payloads can be up to 2^16 bytes, the constraint permits up to approximately 2^47 packets per key. Implementations <span class="bcp14">MAY</span> choose more conservative limits. The maximum number of failed decryption attempts (V_MAX) for AES-GCM-SST is 2^54.<a href="#section-7-3" class="pilcrow">¶</a></p>
+<p id="section-7-4">For Rijndael-GCM-SST cipher suites, the usage limits are significantly higher. A key update <span class="bcp14">MUST</span> be performed before encrypting 2^64 records with the same key (Q_MAX = 2^64 as specified in <span>[<a href="#I-D.draft-mattsson-cfrg-aes-gcm-sst" class="cite xref">I-D.draft-mattsson-cfrg-aes-gcm-sst</a>]</span>). The maximum number of failed decryption attempts (V_MAX) for Rijndael-GCM-SST is 2^118.<a href="#section-7-4" class="pilcrow">¶</a></p>
+<p id="section-7-5">The number of failed decryption attempts (forgery attempts) before a key update or connection termination <span class="bcp14">SHOULD</span> be limited to V_MAX as specified above.<a href="#section-7-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="operational-considerations">
@@ -1466,6 +1467,7 @@ mask = Rijndael-256-ECB(hp_key, sample)[0..4]
 <p id="section-8-2">Rijndael-GCM-SST cipher suites offer significantly higher usage limits and stronger multi-key security compared to AES-GCM-SST, at the cost of requiring Rijndael-256 hardware support for optimal performance.<a href="#section-8-2" class="pilcrow">¶</a></p>
 <p id="section-8-3">On devices lacking hardware AES acceleration, cipher suites dependent on the AES round function <span class="bcp14">SHOULD NOT</span> be prioritized.<a href="#section-8-3" class="pilcrow">¶</a></p>
 <p id="section-8-4">On devices equipped with hardware AES acceleration, GCM-SST cipher suites provide performance comparable to standard AES-GCM cipher suites while offering improved integrity guarantees for a given tag length.<a href="#section-8-4" class="pilcrow">¶</a></p>
+<p id="section-8-5">To align with zero-trust principles and minimize the impact of key compromise, implementations <span class="bcp14">SHOULD</span> enforce rekeying well before reaching the cryptographic limits. Rekeying via ephemeral key exchange providing Forward Secrecy (FS) and Post-Compromise Security (PCS) after 1 hour or 2^30 to 2^37 bytes of data is <span class="bcp14">RECOMMENDED</span>.<a href="#section-8-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
