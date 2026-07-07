@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-05T03:28:25.790754+00:00",
+  "timestamp": "2026-07-07T03:27:20.358269+00:00",
   "repo": "gloinul/draft-westerlund-tls-gcm-sst",
   "labels": [
     {
@@ -55,15 +55,15 @@
       "id": "I_kwDOSVqNcc8AAAABBiLyhQ",
       "title": "32-byte sample for header protection",
       "url": "https://github.com/gloinul/draft-westerlund-tls-gcm-sst/issues/1",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "gloinul",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "When using Rijndal and needing to sample 32-bytes for the header protection. This can potentially be beyond the actual protected amount of data, Using the shorter authentication tags of 12 bytes do require that the encrypted plain text packet is at least 20 bytes. Need text to address this.",
       "createdAt": "2026-05-07T10:10:41Z",
-      "updatedAt": "2026-05-08T09:21:55Z",
-      "closedAt": null,
+      "updatedAt": "2026-07-06T08:26:52Z",
+      "closedAt": "2026-07-06T08:26:52Z",
       "comments": [
         {
           "author": "gloinul",
@@ -71,6 +71,13 @@
           "body": "I noticed that Aegis simply does:\nmask = Stream(40, hp_key, ZeroPad(ciphertext[0..16], nonce_len))\n",
           "createdAt": "2026-05-08T09:21:54Z",
           "updatedAt": "2026-05-08T09:21:54Z"
+        },
+        {
+          "author": "emanjon",
+          "authorAssociation": "COLLABORATOR",
+          "body": "For AES, I don't think we need to specify anything. DTLS and QUIC specifications define how to do it for all AES based cipher suites\n\nFor Rijndael we could use 16 bytes of ciphertext as well and pad it with zeros, than gives the same security as with AES-256. Using 32 bytes ciphertext increases security compared to AES-256 but I don't think the tradeoff is worth it. 128-bit  is good enoug.",
+          "createdAt": "2026-07-06T05:54:29Z",
+          "updatedAt": "2026-07-06T05:54:29Z"
         }
       ]
     },
@@ -79,16 +86,24 @@
       "id": "I_kwDOSVqNcc8AAAABFyOW5A",
       "title": "Section 8 needs to be addressed.",
       "url": "https://github.com/gloinul/draft-westerlund-tls-gcm-sst/issues/2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "gloinul",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "This spec is not setting these limits, only need to comply with them. ",
       "createdAt": "2026-06-17T12:22:57Z",
-      "updatedAt": "2026-06-17T12:22:57Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-07-06T08:32:34Z",
+      "closedAt": "2026-07-06T08:32:34Z",
+      "comments": [
+        {
+          "author": "gloinul",
+          "authorAssociation": "OWNER",
+          "body": "Think current spec has clear guidance. ",
+          "createdAt": "2026-07-06T08:32:34Z",
+          "updatedAt": "2026-07-06T08:32:34Z"
+        }
+      ]
     },
     {
       "number": 3,
@@ -121,25 +136,35 @@
       "id": "PR_kwDOSVqNcc7toJeG",
       "title": "Addressing updates in GCM-SST and Header protection",
       "url": "https://github.com/gloinul/draft-westerlund-tls-gcm-sst/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "gloinul",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Closes #1 ",
       "createdAt": "2026-07-03T14:36:03Z",
-      "updatedAt": "2026-07-04T14:50:12Z",
+      "updatedAt": "2026-07-06T08:26:52Z",
       "baseRepository": "gloinul/draft-westerlund-tls-gcm-sst",
       "baseRefName": "main",
-      "baseRefOid": "0ecc309eefa8ce83435f4e06fdb8b28c184d6194",
+      "baseRefOid": "0e3f759a5fb49fb40dc05a742a45b2f9baf2b990",
       "headRepository": "gloinul/draft-westerlund-tls-gcm-sst",
       "headRefName": "review-00",
-      "headRefOid": "4fe508e4c3a0cbc7f0f1e01caa67029acd02a6c5",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "41f2b85cc2a6d59a576b10a1bf72429222877899",
+      "closedAt": "2026-07-06T08:26:52Z",
+      "mergedAt": "2026-07-06T08:26:52Z",
+      "mergedBy": "gloinul",
+      "mergeCommit": {
+        "oid": "e16dc5020bae8d583c1203be00c5623f5ea669b4"
+      },
+      "comments": [
+        {
+          "author": "emanjon",
+          "authorAssociation": "COLLABORATOR",
+          "body": "For AES, I don't think we need to specify anything. DTLS and QUIC specifications define how to do it for all AES based cipher suites\r\n\r\nFor Rijndael we could use 16 bytes of ciphertext as well and pad it with zeros, than gives the same security as with AES-256. Using 32 bytes ciphertext increases security compared to AES-256 but I don't think the tradeoff is worth it. 128-bit is good enoug.",
+          "createdAt": "2026-07-06T05:55:48Z",
+          "updatedAt": "2026-07-06T05:55:48Z"
+        }
+      ],
       "reviews": []
     }
   ]
